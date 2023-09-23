@@ -1,0 +1,57 @@
+{
+	"name": "esbuild-plugin-react18",
+	"author": "Mayank Kumar Chaudhari <https://mayank-chaudhari.vercel.app>",
+	"private": false,
+	"version": "1.0.0",
+	"description": "Unleash the Power of React Server Components! ESBuild plugin to build RSC (React18 Server Components) compatible libraries.",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"publish-package": "cd dist && npm publish --access public"
+	},
+	"devDependencies": {
+		"@types/node": "^18",
+		"esbuild": "^0.18.17",
+		"octokit": "^3.1.0",
+		"typescript": "^5.1.6",
+		"vitest": "^0.34.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mayank1513/esbuild-plugin-react18.git"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mayank1513/esbuild-plugin-react18/issues"
+	},
+	"homepage": "https://github.com/mayank1513/esbuild-plugin-react18#readme",
+	"sideEffects": false,
+	"funding": {
+		"type": "github",
+		"url": "https://github.com/sponsors/mayank1513"
+	},
+	"keywords": [
+		"react",
+		"nextjs",
+		"useclient",
+		"typescript",
+		"react18",
+		"use client",
+		"esbuild",
+		"esbuild-plugin",
+		"RSC compatible",
+		"esbuild-plugin-react18",
+		"esbuild-plugin-ignoretests",
+		"esbuild-plugin-ignore-test-files",
+		"esbuild-plugin-ignore-testfiles",
+		"esbuild-plugin-ignore",
+		"ignore",
+		"ignoretests",
+		"tsup",
+		"react-server-components",
+		"react-client-components",
+		"javascript",
+		"mayank1513"
+	]
+}
