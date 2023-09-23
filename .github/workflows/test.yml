@@ -7,7 +7,6 @@ on:
 
 jobs:
   test:
-    if: github.run_number != 1
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,6 +20,6 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
-          directory: ./packages/fork-me
+          directory: ./packages/esbuild-plugin-react18
           token: ${{ secrets.CODECOV_TOKEN }}
-          flags: fork-me
+          flags: esbuild-plugin-react18
