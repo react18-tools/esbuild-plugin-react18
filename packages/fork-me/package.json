@@ -1,0 +1,74 @@
+{
+	"name": "@mayank1513/fork-me",
+	"author": "Mayank Kumar Chaudhari <https://mayank-chaudhari.vercel.app>",
+	"private": false,
+	"version": "1.0.2",
+	"description": "An intuitive React.js fork me ribbon component for promoting open source project forks.",
+	"main": "./index.ts",
+	"types": "./index.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mayank1513/turborepo-template.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mayank1513/turborepo-template/issues"
+	},
+	"homepage": "https://github.com/mayank1513/turborepo-template/tree/main/packages/fork-me#readme",
+	"sideEffects": false,
+	"license": "MIT",
+	"scripts": {
+		"test": "vitest run --coverage",
+		"build": "tsup src && tsc -p tsconfig-build.json && node touchup.js",
+		"publish-package": "cd dist && npm publish --access public",
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@testing-library/react": "^14.0.0",
+		"@turbo/gen": "^1.10.14",
+		"@types/node": "^20.6.3",
+		"@types/react": "^18.2.22",
+		"@types/react-dom": "^18.2.7",
+		"@vitejs/plugin-react": "^4.0.4",
+		"@vitest/coverage-v8": "^0.34.5",
+		"esbuild-plugin-ignoretests": "^0.0.6",
+		"esbuild-plugin-removetestid": "^0.0.3",
+		"esbuild-react18-useclient": "^1.0.5",
+		"eslint-config-custom": "workspace:*",
+		"jsdom": "^22.1.0",
+		"octokit": "^3.1.0",
+		"react": "^18.2.0",
+		"tsconfig": "workspace:*",
+		"tsup": "^7.2.0",
+		"typescript": "^5.2.2",
+		"vite-tsconfig-paths": "^4.2.1",
+		"vitest": "^0.34.5"
+	},
+	"peerDependencies": {
+		"@types/react": "16.8 - 18",
+		"next": "10 - 13",
+		"react": "16.8 - 18"
+	},
+	"peerDependenciesMeta": {
+		"next": {
+			"optional": true
+		}
+	},
+	"funding": {
+		"type": "github",
+		"url": "https://github.com/sponsors/mayank1513"
+	},
+	"keywords": [
+		"fork-me",
+		"GitHub",
+		"nextjs",
+		"nextjs13",
+		"react",
+		"react18",
+		"react-server-components",
+		"react-client-components",
+		"typescript",
+		"javascript",
+		"mayank1513",
+		"turborepo-trmplate"
+	]
+}

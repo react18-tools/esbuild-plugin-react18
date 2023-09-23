@@ -1,0 +1,34 @@
+name: setup repo
+
+on:
+  create:
+
+jobs:
+  setup:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Setup Git and create PR
+        run: |
+          git config --global user.name "Mayank Chaudhari<https://mayank-chaudhari.vercel.app>"
+          git config --global user.email "mayank.srmu@gmail.com"
+          git fetch
+          git checkout main
+      - name: Set up repo
+        run: |
+          chmod +x ./setup.sh && ./setup.sh ${{ github.event.repository.owner.login }} ${{ github.event.repository.name }}
+          npm i -g pnpm && pnpm i --ignore-scripts && pnpm update --latest -r
+      - name: Push changes back to repo
+        run: |
+          git add .
+          git commit -m 'Rebrand -- with 💖 by <a href="https://mayank-chaudhari.vercel.app" target="_blank">Mayank Kumar Chaudhari</a> [skip ci]'
+          git push origin main

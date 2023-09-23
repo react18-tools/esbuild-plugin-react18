@@ -1,0 +1,26 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    if: github.run_number != 1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm i -g pnpm && pnpm i --ignore-scripts
+        name: Install dependencies
+      - name: Run unit tests
+        run: pnpm test
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          directory: ./packages/fork-me
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: fork-me
