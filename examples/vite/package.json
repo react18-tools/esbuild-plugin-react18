@@ -11,7 +11,7 @@
 	},
 	"dependencies": {
 		"@mayank1513/fork-me": "^1.0.2",
-		"esbuild-plugin-react18": "workspace:*",
+		"esbuild-plugin-react18-example": "workspace:*",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react18-themes": "^1.0.8"

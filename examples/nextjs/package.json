@@ -9,8 +9,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@mayank1513/fork-me": "^1.0.2",
-		"esbuild-plugin-react18": "workspace:*",
+		"esbuild-plugin-react18-example": "workspace:*",
 		"next": "^13.5.2",
 		"nextjs-themes": "^1.0.0",
 		"react": "^18.2.0",
