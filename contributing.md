@@ -10,7 +10,7 @@
 To build all apps and packages, run the following command:
 
 ```bash
-cd my-turborepo
+cd esbuild-plugin-react18
 pnpm build
 ```
 
@@ -19,7 +19,7 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```bash
-cd my-turborepo
+cd esbuild-plugin-react18
 pnpm dev
 ```
 
@@ -28,7 +28,7 @@ pnpm dev
 To run unit tests, run the following command:
 
 ```bash
-cd my-turborepo
+cd esbuild-plugin-react18
 pnpm test
 ```
 
@@ -37,7 +37,7 @@ pnpm test
 Before creating PR make sure lint is passing and also run formatter to properly format the code.
 
 ```bash
-cd my-turborepo
+cd esbuild-plugin-react18
 pnpm lint
 ```
 

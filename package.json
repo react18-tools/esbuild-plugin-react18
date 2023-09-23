@@ -16,5 +16,5 @@
 		"turbo": "^1.10.14"
 	},
 	"packageManager": "pnpm@8.6.10",
-	"name": "turborepo-template"
+	"name": "esbuild-plugin-react18"
 }
