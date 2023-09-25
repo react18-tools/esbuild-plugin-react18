@@ -8,7 +8,7 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"test": "vitest run --coverage",
-		"build": "tsc",
+		"build": "tsc && node touchup.js",
 		"publish-package": "cd dist && npm publish --access public"
 	},
 	"devDependencies": {
