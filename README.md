@@ -9,17 +9,29 @@ This is an `esbuild` plugin for compiling libraries compatible with React 18 ser
 ## Why?
 
 ✅ Unleash the full power of React18 Server components
+
 ✅ Build libraries for all build systems/tools/frameworks supporting React18
+
 ✅ Unleash the power of combining react client and server components in your libraries
+
 ✅ Full TypeScript support out of the box
+
 ✅ Simple and tiny
+
 ✅ Easy to use — just add the plugin, and you are good to go
+
 ✅ All in one plugin for building react18 libraries with `tsup` or `esbuild`
+
 ✅ add "use client" directive to indicate client component and the plugin will do the rest
+
 ✅ Automatically ignore test files during build
+
 ✅ Automatically remove `data-testid` attributes
+
 ✅ Add `ignorePatterns` and `replacePatterns` to achieve much more control over your build
+
 ✅ Fully Documented
+
 ✅ Ready to use [GitHub repository template](https://github.com/mayank1513/turborepo-template) to create your next react18 library
 
 Introduction of React server components in React 18 has unlocked immense possibilities. However, library authors are not yet able to fully encash upon this potential. Many libraries, like `chakra-ui`, simply add “use client” for each component. However, much more can be unleashed when we can use both server and client components to build libraries. Also check-out this [blog](https://mayank1513.medium.com/unleash-the-power-of-react-server-components-eb3fe7201231).
