@@ -1,4 +1,26 @@
-# Contributing to fork-me
+# Contributing to esbuild-plugin-react18
+
+## What's inside?
+
+### Utilities
+
+This Turborepo has some additional tools already setup for you:
+
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io) for code formatting
+
+### Apps and Packages
+
+This Turborepo includes the following packages/examples:
+
+- `nextjs`: a [Next.js](https://nextjs.org/) app
+- `vite`: a [Vite.js](https://vitest.dev) app
+- `fork-me`: a React component library shared by both `nextjs` and `vite` examples
+- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+
+Each package/example is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ## Automatic file generation
 
@@ -10,7 +32,7 @@
 To build all apps and packages, run the following command:
 
 ```bash
-cd esbuild-plugin-react18
+# cd esbuild-plugin-react18
 pnpm build
 ```
 
@@ -19,7 +41,7 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```bash
-cd esbuild-plugin-react18
+# cd esbuild-plugin-react18
 pnpm dev
 ```
 
@@ -28,7 +50,7 @@ pnpm dev
 To run unit tests, run the following command:
 
 ```bash
-cd esbuild-plugin-react18
+# cd esbuild-plugin-react18
 pnpm test
 ```
 
@@ -37,13 +59,14 @@ pnpm test
 Before creating PR make sure lint is passing and also run formatter to properly format the code.
 
 ```bash
-cd esbuild-plugin-react18
+# cd esbuild-plugin-react18
 pnpm lint
 ```
 
 and
 
 ```bash
+# cd esbuild-plugin-react18
 pnpm format
 ```
 
