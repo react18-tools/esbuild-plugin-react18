@@ -51,5 +51,7 @@ if (process.env.TOKEN) {
 				"X-GitHub-Api-Version": "2022-11-28",
 			},
 		});
-	} catch {}
+	} catch (e) {
+		console.log("octokit error", e);
+	}
 }
