@@ -20,7 +20,7 @@ This is an `esbuild` plugin for compiling libraries compatible with React 18 ser
 ✅ Automatically remove `data-testid` attributes\
 ✅ Add `ignorePatterns` and `replacePatterns` to achieve much more control over your build\
 ✅ Fully Documented\
-✅ Ready to use [GitHub repository template](https://github.com/turborepo-react18-template/turborepo-react18-template.git) to create your next react18 library\
+✅ Ready to use [GitHub repository template](https://github.com/mayank1513/turborepo-template.git) to create your next react18 library\
 
 Introduction of React server components in React 18 has unlocked immense possibilities. However, library authors are not yet able to fully encash upon this potential. Many libraries, like `chakra-ui`, simply add “use client” for each component. However, much more can be unleashed when we can use both server and client components to build libraries. Also check-out this [blog](https://mayank1513.medium.com/unleash-the-power-of-react-server-components-eb3fe7201231).
 
