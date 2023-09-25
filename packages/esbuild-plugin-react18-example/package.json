@@ -1,7 +1,7 @@
 {
 	"name": "esbuild-plugin-react18-example",
 	"author": "Mayank Kumar Chaudhari <https://mayank-chaudhari.vercel.app>",
-	"private": false,
+	"private": true,
 	"version": "0.0.0",
 	"description": "An intuitive React.js fork me ribbon component for promoting open source project forks.",
 	"main": "./index.ts",
@@ -33,6 +33,7 @@
 		"esbuild-plugin-ignoretests": "^0.0.6",
 		"esbuild-plugin-removetestid": "^0.0.3",
 		"esbuild-react18-useclient": "^1.0.5",
+		"esbuild-plugin-react18": "workspace:*",
 		"eslint-config-custom": "workspace:*",
 		"jsdom": "^22.1.0",
 		"octokit": "^3.1.0",
