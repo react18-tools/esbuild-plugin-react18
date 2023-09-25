@@ -1,9 +1,28 @@
-# esbuild-plugin-react18 [![test](https://github.com/mayank1513/esbuild-plugin-react18/actions/workflows/test.yml/badge.svg)](https://github.com/mayank1513/esbuild-plugin-react18/actions/workflows/test.yml) [![codecov](https://codecov.io/gh/mayank1513/esbuild-plugin-react18/graph/badge.svg)](https://codecov.io/gh/mayank1513/esbuild-plugin-react18) [![Version](https://img.shields.io/npm/v/esbuild-plugin-react18.svg?colorB=green)](https://www.npmjs.com/package/esbuild-plugin-react18) [![Downloads](https://img.jsdelivr.com/img.shields.io/npm/dt/esbuild-plugin-react18.svg)](https://www.npmjs.com/package/esbuild-plugin-react18) [![Unit Tests](https://github.com/mayank1513/esbuild-plugin-react18/actions/workflows/test.yml/badge.svg)](https://github.com/mayank1513/esbuild-plugin-react18/actions/workflows/test.yml) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/esbuild-plugin-react18)
+# esbuild-plugin-react18 [![test](https://github.com/mayank1513/esbuild-plugin-react18/actions/workflows/test.yml/badge.svg)](https://github.com/mayank1513/esbuild-plugin-react18/actions/workflows/test.yml) [![codecov](https://codecov.io/gh/mayank1513/esbuild-plugin-react18/graph/badge.svg)](https://codecov.io/gh/mayank1513/esbuild-plugin-react18) [![Version](https://img.shields.io/npm/v/esbuild-plugin-react18.svg?colorB=green)](https://www.npmjs.com/package/esbuild-plugin-react18) [![Downloads](https://img.jsdelivr.com/img.shields.io/npm/dt/esbuild-plugin-react18.svg)](https://www.npmjs.com/package/esbuild-plugin-react18) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/esbuild-plugin-react18)
 
-- ✅ Fully Treeshakable (`import from esbuild-plugin-react18/client/component`)
-- ✅ Full TypeScript Support
-- ✅ Unleash the full power of React18 Server components
-- ✅ Works with all build systems/tools/frameworks for React18
+<img src="esbuild-react18.jpg" title="Build Awesome Libraries using React Server Components and make your Mark!" style="width:100%"/>
+
+> Build Awesome Libraries using React Server Components and make your Mark!
+
+This is an `esbuild` plugin for compiling libraries compatible with React 18 server and client component, Nextjs13, Remix, etc.
+
+## Why?
+
+✅ Unleash the full power of React18 Server components
+✅ Build libraries for all build systems/tools/frameworks supporting React18
+✅ Unleash the power of combining react client and server components in your libraries
+✅ Full TypeScript support out of the box
+✅ Simple and tiny
+✅ Easy to use — just add the plugin, and you are good to go
+✅ All in one plugin for building react18 libraries with `tsup` or `esbuild`
+✅ add "use client" directive to indicate client component and the plugin will do the rest
+✅ Automatically ignore test files during build
+✅ Automatically remove `data-testid` attributes
+✅ Add `ignorePatterns` and `replacePatterns` to achieve much more control over your build
+✅ Fully Documented
+✅ Ready to use [GitHub repository template](https://github.com/mayank1513/turborepo-template) to create your next react18 library
+
+Introduction of React server components in React 18 has unlocked immense possibilities. However, library authors are not yet able to fully encash upon this potential. Many libraries, like `chakra-ui`, simply add “use client” for each component. However, much more can be unleashed when we can use both server and client components to build libraries. Also check-out this [blog](https://mayank1513.medium.com/unleash-the-power-of-react-server-components-eb3fe7201231).
 
 ## Install
 
@@ -14,8 +33,6 @@ $ npm install esbuild-plugin-react18
 # or
 $ yarn add esbuild-plugin-react18
 ```
-
-
 
 ## What's different from scaffolding turbo-repo by `create-turbo`
 
@@ -33,7 +50,6 @@ Following features make it really cool and useful
 - github actions/workflows to auto publish your package when version changes
 
 ## Checklist
-
 
 - [ ] Set up `CodeCov`
   - [ ] Visit codecov and setup your repo
