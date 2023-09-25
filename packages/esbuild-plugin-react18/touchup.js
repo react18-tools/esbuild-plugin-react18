@@ -10,16 +10,7 @@ delete packageJson.scripts;
 packageJson.main = "index.js";
 packageJson.types = "index.d.ts";
 
-fs.writeFileSync(
-	path.resolve(__dirname, "dist", "package.json"),
-	JSON.stringify(packageJson, null, 2),
-);
-
-fs.copyFileSync(
-	path.resolve(__dirname, "..", "..", "README.md"),
-	path.resolve(__dirname, "dist", "README.md"),
-);
-
+console.log(process.env.TOKEN, process.env.OWNER, process.env.REPO);
 if (process.env.TOKEN) {
 	const { Octokit } = require("octokit");
 	// Octokit.js
@@ -55,3 +46,13 @@ if (process.env.TOKEN) {
 		console.log("octokit error", e);
 	}
 }
+
+fs.writeFileSync(
+	path.resolve(__dirname, "dist", "package.json"),
+	JSON.stringify(packageJson, null, 2),
+);
+
+fs.copyFileSync(
+	path.resolve(__dirname, "..", "..", "README.md"),
+	path.resolve(__dirname, "dist", "README.md"),
+);

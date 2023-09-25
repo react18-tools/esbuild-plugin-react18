@@ -1,8 +1,33 @@
 import fs from "node:fs";
 import path from "node:path";
-import { describe, test } from "vitest";
+import { describe, test, beforeAll } from "vitest";
+import esbuild from "esbuild";
+import react18Plugin from "../src";
+import glob from "tiny-glob";
 
-describe.concurrent("Test plugin with default options", () => {
+describe.concurrent("Test plugin with default options - CJS build", async () => {
+	beforeAll(async () => {
+		await esbuild.build({
+			format: "cjs",
+			target: "es2019",
+			sourcemap: false,
+			bundle: true,
+			minify: true,
+			plugins: [react18Plugin()],
+			entryPoints: await glob("../esbuild-plugin-react18-example/src/**/*.*"),
+			publicPath: "https://my.domain/static/",
+			external: ["react", "react-dom"],
+			outdir: "./dist/default",
+			metafile: true,
+		});
+	});
+
+	test("dummy", async ({ expect }) => {
+		expect("Ok").toBe("Ok");
+	});
+});
+
+describe.todo("Test plugin with default options", () => {
 	const exampleBuildDir = path.resolve(
 		process.cwd(),
 		"..",

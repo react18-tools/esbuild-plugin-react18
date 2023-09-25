@@ -116,6 +116,8 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 		const useClientRegExp = /['"]use client['"]\s?;/i;
 
 		build.onEnd(result => {
+			console.log("onEnd -- start", result);
+
 			result.outputFiles
 				?.filter(f => !f.path.endsWith(".map"))
 				.forEach(f => {
@@ -144,6 +146,7 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 			if (!options?.keepTests) {
 				result.outputFiles = result.outputFiles?.filter(f => !testPathRegExp.test(f.path));
 			}
+			console.log("onEnd", result);
 		});
 	},
 });
