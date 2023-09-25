@@ -17,6 +17,8 @@ jobs:
           node-version: 18
       - run: npm i -g pnpm && pnpm i --ignore-scripts
         name: Install dependencies
+      - run: pnpm build --filter esbuild-plugin-react18-example
+        name: build example app to run tests
       - name: Run unit tests
         run: pnpm test
       - name: Upload coverage reports to Codecov
