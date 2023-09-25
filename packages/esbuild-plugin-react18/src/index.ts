@@ -2,7 +2,7 @@ import { OnLoadResult, Plugin } from "esbuild";
 import fs from "node:fs";
 import path from "node:path";
 
-type react18PluginOptions = {
+type React18PluginOptions = {
 	/** do not ignore tese files */
 	keepTests?: boolean;
 
@@ -48,7 +48,7 @@ type react18PluginOptions = {
 };
 
 /** This plugin prevents building test files by esbuild. DTS may still geenrate type files for the tests with only { } as file content*/
-const react18Plugin: (options?: react18PluginOptions) => Plugin = options => ({
+const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 	name: "esbuild-plugin-react18-" + uuid(),
 	setup(build) {
 		const ignoreNamespace = "mayank1513-ignore-" + uuid();
