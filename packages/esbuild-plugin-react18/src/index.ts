@@ -131,8 +131,8 @@ const react18Plugin: (options: React18PluginOptions) => Plugin = options => ({
 				.forEach(f => {
 					const txt = f.text;
 					if (txt.match(useClientRegExp)) {
-						const value = '"use client";\n' + txt.replace(useClientRegExp, "");
-						f.contents = new TextEncoder().encode(value);
+						const text = '"use client";\n' + txt.replace(useClientRegExp, "");
+						f.contents = new TextEncoder().encode(text);
 					}
 				});
 
@@ -145,7 +145,7 @@ const react18Plugin: (options: React18PluginOptions) => Plugin = options => ({
 						buildReplacePattern.replaceParams.forEach(({ pattern, substitute }) => {
 							text = text.replace(pattern, substitute);
 						});
-						Object.defineProperty(f, "text", { value: text });
+						f.contents = new TextEncoder().encode(text);
 					});
 			});
 
