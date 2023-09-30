@@ -113,8 +113,9 @@ type React18PluginOptions = {
 };
 ```
 
-### 🤩 Don't forger to start this repo!
+### [🤩 Don't forger to start this repo!](https://github.com/mayank1513/esbuild-plugin-react18)
 
+[💖](https://github.com/mayank1513/esbuild-plugin-react18) [🌟](https://github.com/mayank1513/esbuild-plugin-react18)
 Want handson course for getting started with Turborepo? Check out [React and Next.js with TypeScript](https://www.udemy.com/course/react-and-next-js-with-typescript/?referralCode=7202184A1E57C3DCA8B2) and [The Game of Chess with Next.js, React and TypeScrypt](https://www.udemy.com/course/game-of-chess-with-nextjs-react-and-typescrypt/?referralCode=851A28F10B254A8523FE)
 
 ![Alt](https://repobeats.axiom.co/api/embed/798673e15cf0802fe4e2470f946b64b551b5536d.svg "Repobeats analytics image")
