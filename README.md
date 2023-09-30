@@ -50,9 +50,9 @@ npm install -D esbuild-react18-useclient
 
 > If you are using `monorepo` or `workspaces` you can install this plugin to root using `-w` or to specific workspace using `--filter your-package` or `--scope your-package` for `pnpm` and `yarn` workspaces respectively.
 
-## Simplatest use with `tsup`
+## use with `tsup`
 
-```javascript
+```ts
 // tsup.config.ts or tsup.config.js
 import { defineConfig } from "tsup";
 import react18Plugin from "esbuild-react18-useclient";
@@ -62,6 +62,18 @@ export default defineConfig(options => ({
     ...
     esbuildPlugins:[react18Plugin(react18PluginOptions)]
 }));
+```
+
+## use with esbuild
+
+```ts
+import react18Plugin from "esbuild-react18-useclient";
+
+const react18PluginOptions: React18PluginOptions = {}
+esbuild.build({
+	...
+	plugins: [react18Plugin()],
+});
 ```
 
 ## Plugin Options
