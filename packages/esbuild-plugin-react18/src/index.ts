@@ -3,10 +3,10 @@ import fs from "node:fs";
 import path from "node:path";
 
 type React18PluginOptions = {
-	/** do not ignore tese files */
+	/** to not ignore tese files */
 	keepTests?: boolean;
 
-	/** do not remove `data-testid` attributes. If `keepTests` is true,
+	/** to not remove `data-testid` attributes. If `keepTests` is true,
 	 * `data-testid` attributes will not be removed irrespective of
 	 * `keepTestIds` value.
 	 * This attribute is useful when setting `sourceReplacePatterns`
@@ -52,6 +52,7 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 	name: "esbuild-plugin-react18-" + uuid(),
 	setup(build) {
 		const ignoreNamespace = "mayank1513-ignore-" + uuid();
+		const keepNamespace = "mayank1513-keep-" + uuid();
 		const testPathRegExp = /.*\.(test|spec|check)\.(j|t)s(x)?$/i;
 
 		const write = build.initialOptions.write;
@@ -78,22 +79,19 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 		options?.ignorePatterns?.forEach(ignorePattern => {
 			build.onResolve({ filter: ignorePattern.pathPattern }, args => {
 				/** remove content to avoid building/transpiling test files unnecessarily*/
-				console.log("onResolve - ignore", args);
-				if (!ignorePattern.contentPatterns?.length)
-					return {
-						path: args.path,
-						namespace: ignoreNamespace,
-					};
-				const text = fs.readFileSync(path.resolve(args.resolveDir, args.path), "utf8");
-				for (const contentPattern of ignorePattern.contentPatterns) {
-					if (contentPattern.test(text)) {
-						return {
-							path: args.path,
-							namespace: ignoreNamespace,
-						};
+				const fullPath = path.resolve(args.resolveDir, args.path);
+				if (!ignorePattern.contentPatterns?.length || !fs.existsSync(fullPath))
+					return { path: args.path, namespace: ignoreNamespace };
+
+				if (!fs.lstatSync(fullPath).isDirectory()) {
+					const text = fs.readFileSync(fullPath, "utf8");
+					for (const contentPattern of ignorePattern.contentPatterns) {
+						if (contentPattern.test(text)) {
+							return { path: args.path, namespace: ignoreNamespace };
+						}
 					}
 				}
-				return { path: args.path };
+				return { path: fullPath, namespace: keepNamespace };
 			});
 		});
 
@@ -115,6 +113,16 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 		build.onLoad({ filter: /.*/, namespace: ignoreNamespace }, args => {
 			/** remove content to avoid building/transpiling test files unnecessarily*/
 			return { contents: "" };
+		});
+
+		build.onLoad({ filter: /.*/, namespace: keepNamespace }, args => {
+			console.log("keep", args);
+			if (fs.existsSync(args.path) && fs.lstatSync(args.path).isDirectory())
+				return { contents: "" };
+			else {
+				const loader = args.path.slice(args.path.lastIndexOf(".") + 1);
+				return { contents: fs.readFileSync(args.path, "utf-8"), loader } as OnLoadResult;
+			}
 		});
 
 		const useClientRegExp = /['"]use client['"]\s?;/i;

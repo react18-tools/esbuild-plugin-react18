@@ -3,7 +3,7 @@ import path from "node:path";
 import { describe, test, beforeAll } from "vitest";
 
 /** testing tsup example - make sure it is build before running this test suit */
-describe("Test plugin with default options in example build with tsup", () => {
+describe.concurrent("Test plugin with default options in example build with tsup", () => {
 	const exampleBuildDir = path.resolve(
 		process.cwd(),
 		"..",
