@@ -3,10 +3,10 @@ import fs from "node:fs";
 import path from "node:path";
 
 type React18PluginOptions = {
-	/** do not ignore tese files */
+	/** to not ignore tese files */
 	keepTests?: boolean;
 
-	/** do not remove `data-testid` attributes. If `keepTests` is true,
+	/** to not remove `data-testid` attributes. If `keepTests` is true,
 	 * `data-testid` attributes will not be removed irrespective of
 	 * `keepTestIds` value.
 	 * This attribute is useful when setting `sourceReplacePatterns`
@@ -48,51 +48,53 @@ type React18PluginOptions = {
 };
 
 /** This plugin prevents building test files by esbuild. DTS may still geenrate type files for the tests with only { } as file content*/
-const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
+const react18Plugin: (options: React18PluginOptions) => Plugin = options => ({
 	name: "esbuild-plugin-react18-" + uuid(),
 	setup(build) {
+		if (!options) options = {};
 		const ignoreNamespace = "mayank1513-ignore-" + uuid();
+		const keepNamespace = "mayank1513-keep-" + uuid();
 		const testPathRegExp = /.*\.(test|spec|check)\.(j|t)s(x)?$/i;
-		if (!options?.keepTests) {
+
+		const write = build.initialOptions.write;
+		build.initialOptions.write = false;
+
+		if (!options.keepTests) {
 			build.onResolve({ filter: testPathRegExp }, args => ({
 				path: args.path,
 				namespace: ignoreNamespace,
 			}));
-			if (!options?.keepTestIds) {
+			if (!options.keepTestIds) {
 				/** remove data-testid */
-				build.onLoad({ filter: /.*\.(j|t)s(x)?$/, namespace: "file" }, args => {
-					const text = fs.readFileSync(args.path, "utf8");
-					const loader = args.path.slice(args.path.lastIndexOf(".") + 1);
-					return {
-						contents: text.replace(/\s*data-testid="[^"]*"/gm, " "),
-						loader,
-					} as OnLoadResult;
+				if (!options.sourceReplacePatterns) options.sourceReplacePatterns = [];
+				options.sourceReplacePatterns.push({
+					pathPattern: /.*\.(j|t)s(x)?$/,
+					replaceParams: [{ pattern: /\s*data-testid="[^"]*"/gm, substitute: " " }],
 				});
 			}
 		}
 
-		options?.ignorePatterns?.forEach(ignorePattern => {
+		options.ignorePatterns?.forEach(ignorePattern => {
 			build.onResolve({ filter: ignorePattern.pathPattern }, args => {
 				/** remove content to avoid building/transpiling test files unnecessarily*/
-				if (!ignorePattern.contentPatterns?.length)
-					return {
-						path: args.path,
-						namespace: ignoreNamespace,
-					};
-				const text = fs.readFileSync(path.resolve(args.resolveDir, args.path), "utf8");
-				for (const contentPattern of ignorePattern.contentPatterns) {
-					if (contentPattern.test(text)) {
-						return {
-							path: args.path,
-							namespace: ignoreNamespace,
-						};
+				const fullPath = path.resolve(args.resolveDir, args.path);
+				if (!ignorePattern.contentPatterns?.length || !fs.existsSync(fullPath))
+					return { path: args.path, namespace: ignoreNamespace };
+
+				if (!fs.lstatSync(fullPath).isDirectory()) {
+					const text = fs.readFileSync(fullPath, "utf8");
+					for (const contentPattern of ignorePattern.contentPatterns) {
+						if (contentPattern.test(text)) {
+							return { path: args.path, namespace: ignoreNamespace };
+						}
 					}
 				}
-				return { path: args.path };
+				return { path: fullPath, namespace: keepNamespace };
 			});
 		});
 
-		options?.sourceReplacePatterns?.forEach(sourceReplacePattern => {
+		options.sourceReplacePatterns?.forEach(sourceReplacePattern => {
+			if (sourceReplacePattern.replaceParams.length === 0) return;
 			/** Add namespace file to avoid conflict with ignored files */
 			build.onLoad({ filter: sourceReplacePattern.pathPattern, namespace: "file" }, args => {
 				let contents = fs.readFileSync(args.path, "utf8");
@@ -109,8 +111,16 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 
 		build.onLoad({ filter: /.*/, namespace: ignoreNamespace }, args => {
 			/** remove content to avoid building/transpiling test files unnecessarily*/
-			console.log("onLoad", args);
 			return { contents: "" };
+		});
+
+		build.onLoad({ filter: /.*/, namespace: keepNamespace }, args => {
+			if (fs.existsSync(args.path) && fs.lstatSync(args.path).isDirectory())
+				return { contents: "" };
+			else {
+				const loader = args.path.slice(args.path.lastIndexOf(".") + 1);
+				return { contents: fs.readFileSync(args.path, "utf-8"), loader } as OnLoadResult;
+			}
 		});
 
 		const useClientRegExp = /['"]use client['"]\s?;/i;
@@ -121,14 +131,13 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 				.forEach(f => {
 					const txt = f.text;
 					if (txt.match(useClientRegExp)) {
-						Object.defineProperty(f, "text", {
-							value: '"use client";\n' + txt.replace(useClientRegExp, ""),
-						});
+						const text = '"use client";\n' + txt.replace(useClientRegExp, "");
+						f.contents = new TextEncoder().encode(text);
 					}
 				});
 
 			/** handle buildReplacePatterns */
-			options?.buildReplacePatterns?.forEach(buildReplacePattern => {
+			options.buildReplacePatterns?.forEach(buildReplacePattern => {
 				result.outputFiles
 					?.filter(f => buildReplacePattern.pathPattern.test(f.path))
 					.forEach(f => {
@@ -136,13 +145,23 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 						buildReplacePattern.replaceParams.forEach(({ pattern, substitute }) => {
 							text = text.replace(pattern, substitute);
 						});
-						Object.defineProperty(f, "text", { value: text });
+						f.contents = new TextEncoder().encode(text);
 					});
 			});
 
 			/** Do not generate {empty} test files if keepTests is not set to true */
-			if (!options?.keepTests) {
+			if (!options.keepTests) {
 				result.outputFiles = result.outputFiles?.filter(f => !testPathRegExp.test(f.path));
+			}
+
+			/** remove empty files */
+			result.outputFiles = result.outputFiles?.filter(f => f.text !== "");
+			/** assume true if undefined */
+			if (write === undefined || write) {
+				result.outputFiles?.forEach(file => {
+					fs.mkdirSync(path.dirname(file.path), { recursive: true });
+					fs.writeFileSync(file.path, file.contents);
+				});
 			}
 		});
 	},
