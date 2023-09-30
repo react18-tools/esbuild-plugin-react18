@@ -48,9 +48,10 @@ type React18PluginOptions = {
 };
 
 /** This plugin prevents building test files by esbuild. DTS may still geenrate type files for the tests with only { } as file content*/
-const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
+const react18Plugin: (options: React18PluginOptions) => Plugin = options => ({
 	name: "esbuild-plugin-react18-" + uuid(),
 	setup(build) {
+		if (!options) options = {};
 		const ignoreNamespace = "mayank1513-ignore-" + uuid();
 		const keepNamespace = "mayank1513-keep-" + uuid();
 		const testPathRegExp = /.*\.(test|spec|check)\.(j|t)s(x)?$/i;
@@ -58,25 +59,22 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 		const write = build.initialOptions.write;
 		build.initialOptions.write = false;
 
-		if (!options?.keepTests) {
+		if (!options.keepTests) {
 			build.onResolve({ filter: testPathRegExp }, args => ({
 				path: args.path,
 				namespace: ignoreNamespace,
 			}));
-			if (!options?.keepTestIds) {
+			if (!options.keepTestIds) {
 				/** remove data-testid */
-				build.onLoad({ filter: /.*\.(j|t)s(x)?$/, namespace: "file" }, args => {
-					const text = fs.readFileSync(args.path, "utf8");
-					const loader = args.path.slice(args.path.lastIndexOf(".") + 1);
-					return {
-						contents: text.replace(/\s*data-testid="[^"]*"/gm, " "),
-						loader,
-					} as OnLoadResult;
+				if (!options.sourceReplacePatterns) options.sourceReplacePatterns = [];
+				options.sourceReplacePatterns.push({
+					pathPattern: /.*\.(j|t)s(x)?$/,
+					replaceParams: [{ pattern: /\s*data-testid="[^"]*"/gm, substitute: " " }],
 				});
 			}
 		}
 
-		options?.ignorePatterns?.forEach(ignorePattern => {
+		options.ignorePatterns?.forEach(ignorePattern => {
 			build.onResolve({ filter: ignorePattern.pathPattern }, args => {
 				/** remove content to avoid building/transpiling test files unnecessarily*/
 				const fullPath = path.resolve(args.resolveDir, args.path);
@@ -95,7 +93,8 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 			});
 		});
 
-		options?.sourceReplacePatterns?.forEach(sourceReplacePattern => {
+		options.sourceReplacePatterns?.forEach(sourceReplacePattern => {
+			if (sourceReplacePattern.replaceParams.length === 0) return;
 			/** Add namespace file to avoid conflict with ignored files */
 			build.onLoad({ filter: sourceReplacePattern.pathPattern, namespace: "file" }, args => {
 				let contents = fs.readFileSync(args.path, "utf8");
@@ -116,7 +115,6 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 		});
 
 		build.onLoad({ filter: /.*/, namespace: keepNamespace }, args => {
-			console.log("keep", args);
 			if (fs.existsSync(args.path) && fs.lstatSync(args.path).isDirectory())
 				return { contents: "" };
 			else {
@@ -139,7 +137,7 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 				});
 
 			/** handle buildReplacePatterns */
-			options?.buildReplacePatterns?.forEach(buildReplacePattern => {
+			options.buildReplacePatterns?.forEach(buildReplacePattern => {
 				result.outputFiles
 					?.filter(f => buildReplacePattern.pathPattern.test(f.path))
 					.forEach(f => {
@@ -152,7 +150,7 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 			});
 
 			/** Do not generate {empty} test files if keepTests is not set to true */
-			if (!options?.keepTests) {
+			if (!options.keepTests) {
 				result.outputFiles = result.outputFiles?.filter(f => !testPathRegExp.test(f.path));
 			}
 

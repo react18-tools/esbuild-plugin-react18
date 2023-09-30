@@ -1,5 +1,6 @@
 import * as React from "react";
 import cssClasses from "./fork-me.module.css";
+import { defaultBgColor, defaultColor } from "../constants";
 
 interface ForkMeProps {
 	gitHubUrl: string;
@@ -29,8 +30,8 @@ export function ForkMe({
 }: ForkMeProps) {
 	const w = (Number.isNaN(Number(width)) ? width : `${width}px`) || "15em";
 	const h = (Number.isNaN(Number(height)) ? height : `${height}px`) || "35px";
-	const bgC = bgColor || "#aaa";
-	const tC = textColor || "#555";
+	const bgC = bgColor || defaultBgColor;
+	const tC = textColor || defaultColor;
 	const style = {
 		"--w": w,
 		"--h": h,
