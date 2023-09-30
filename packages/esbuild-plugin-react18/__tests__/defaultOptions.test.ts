@@ -18,7 +18,6 @@ describe.concurrent("Test plugin with default options - CJS build", async () => 
 			publicPath: "https://my.domain/static/",
 			external: ["react", "react-dom"],
 			outdir: "./dist/default",
-			metafile: true,
 		});
 	});
 

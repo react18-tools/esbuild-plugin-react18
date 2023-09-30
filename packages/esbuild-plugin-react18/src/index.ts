@@ -53,6 +53,10 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 	setup(build) {
 		const ignoreNamespace = "mayank1513-ignore-" + uuid();
 		const testPathRegExp = /.*\.(test|spec|check)\.(j|t)s(x)?$/i;
+
+		const write = build.initialOptions.write;
+		build.initialOptions.write = false;
+
 		if (!options?.keepTests) {
 			build.onResolve({ filter: testPathRegExp }, args => ({
 				path: args.path,
@@ -109,23 +113,19 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 
 		build.onLoad({ filter: /.*/, namespace: ignoreNamespace }, args => {
 			/** remove content to avoid building/transpiling test files unnecessarily*/
-			console.log("onLoad", args);
 			return { contents: "" };
 		});
 
 		const useClientRegExp = /['"]use client['"]\s?;/i;
 
 		build.onEnd(result => {
-			console.log("onEnd -- start", result);
-
 			result.outputFiles
 				?.filter(f => !f.path.endsWith(".map"))
 				.forEach(f => {
 					const txt = f.text;
 					if (txt.match(useClientRegExp)) {
-						Object.defineProperty(f, "text", {
-							value: '"use client";\n' + txt.replace(useClientRegExp, ""),
-						});
+						const value = '"use client";\n' + txt.replace(useClientRegExp, "");
+						f.contents = new TextEncoder().encode(value);
 					}
 				});
 
@@ -146,7 +146,13 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 			if (!options?.keepTests) {
 				result.outputFiles = result.outputFiles?.filter(f => !testPathRegExp.test(f.path));
 			}
-			console.log("onEnd", result);
+			/** assume true if undefined */
+			if (write === undefined || write) {
+				result.outputFiles?.forEach(file => {
+					fs.mkdirSync(path.dirname(file.path), { recursive: true });
+					fs.writeFileSync(file.path, file.contents);
+				});
+			}
 		});
 	},
 });
