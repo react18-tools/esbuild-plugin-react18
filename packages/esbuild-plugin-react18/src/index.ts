@@ -78,6 +78,7 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 		options?.ignorePatterns?.forEach(ignorePattern => {
 			build.onResolve({ filter: ignorePattern.pathPattern }, args => {
 				/** remove content to avoid building/transpiling test files unnecessarily*/
+				console.log("onResolve - ignore", args);
 				if (!ignorePattern.contentPatterns?.length)
 					return {
 						path: args.path,
@@ -146,6 +147,9 @@ const react18Plugin: (options?: React18PluginOptions) => Plugin = options => ({
 			if (!options?.keepTests) {
 				result.outputFiles = result.outputFiles?.filter(f => !testPathRegExp.test(f.path));
 			}
+
+			/** remove empty files */
+			result.outputFiles = result.outputFiles?.filter(f => f.text !== "");
 			/** assume true if undefined */
 			if (write === undefined || write) {
 				result.outputFiles?.forEach(file => {
