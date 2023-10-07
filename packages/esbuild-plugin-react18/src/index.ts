@@ -48,10 +48,9 @@ type React18PluginOptions = {
 };
 
 /** This plugin prevents building test files by esbuild. DTS may still geenrate type files for the tests with only { } as file content*/
-const react18Plugin: (options: React18PluginOptions) => Plugin = options => ({
+const react18Plugin: (options?: React18PluginOptions) => Plugin = (options = {}) => ({
 	name: "esbuild-plugin-react18-" + uuid(),
 	setup(build) {
-		if (!options) options = {};
 		const ignoreNamespace = "mayank1513-ignore-" + uuid();
 		const keepNamespace = "mayank1513-keep-" + uuid();
 		const testPathRegExp = /.*\.(test|spec|check)\.(j|t)s(x)?$/i;

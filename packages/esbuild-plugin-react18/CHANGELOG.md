@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.0.4
+
+### Patch Changes
+
+- Fix #8 initialise plugin without passing options
+
 ## 0.0.3
 
 ### Patch Changes
