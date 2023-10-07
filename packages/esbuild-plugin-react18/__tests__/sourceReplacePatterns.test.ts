@@ -7,7 +7,7 @@ import glob from "tiny-glob";
 
 describe.concurrent("Test plugin with ignorePatterns -- without content pattern", async () => {
 	const outDir = "source-replace-patterns";
-	const exampleBuildDir = path.resolve(process.cwd(), "dist", outDir);
+	const exampleBuildDir = path.resolve(process.cwd(), "test-build", outDir);
 	try {
 		fs.unlinkSync(path.resolve(exampleBuildDir));
 	} catch {}
@@ -34,7 +34,7 @@ describe.concurrent("Test plugin with ignorePatterns -- without content pattern"
 			entryPoints: await glob("../esbuild-plugin-react18-example/src/**/*.*"),
 			publicPath: "https://my.domain/static/",
 			external: ["react", "react-dom"],
-			outdir: "./dist/" + outDir,
+			outdir: "./test-build/" + outDir,
 		});
 	});
 
