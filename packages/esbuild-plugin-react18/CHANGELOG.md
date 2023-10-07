@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.0.5
+
+### Patch Changes
+
+- Remove test build files from publish artefects
+
 ## 0.0.4
 
 ### Patch Changes

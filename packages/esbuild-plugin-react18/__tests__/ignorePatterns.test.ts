@@ -7,7 +7,7 @@ import glob from "tiny-glob";
 
 describe.concurrent("Test plugin with ignorePatterns -- without content pattern", async () => {
 	const outDir = "ignore-patterns-0";
-	const exampleBuildDir = path.resolve(process.cwd(), "dist", outDir);
+	const exampleBuildDir = path.resolve(process.cwd(), "test-build", outDir);
 	try {
 		fs.unlinkSync(path.resolve(exampleBuildDir));
 	} catch {}
@@ -22,7 +22,7 @@ describe.concurrent("Test plugin with ignorePatterns -- without content pattern"
 			entryPoints: await glob("../esbuild-plugin-react18-example/src/**/*.*"),
 			publicPath: "https://my.domain/static/",
 			external: ["react", "react-dom"],
-			outdir: "./dist/" + outDir,
+			outdir: "./test-build/" + outDir,
 		});
 	});
 
@@ -59,11 +59,11 @@ describe.concurrent("Test plugin with ignorePatterns with content pattern", asyn
 			entryPoints: await glob("../esbuild-plugin-react18-example/src/**/*.*"),
 			publicPath: "https://my.domain/static/",
 			external: ["react", "react-dom"],
-			outdir: "./dist/" + outDir,
+			outdir: "./test-build/" + outDir,
 		});
 	});
 
-	const exampleBuildDir = path.resolve(process.cwd(), "dist", outDir);
+	const exampleBuildDir = path.resolve(process.cwd(), "test-build", outDir);
 	test(`star-me.tsx file should exist`, ({ expect }) => {
 		expect(fs.existsSync(path.resolve(exampleBuildDir, "client", "star-me", "star-me.js"))).toBe(
 			true,
