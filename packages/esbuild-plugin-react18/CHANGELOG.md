@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.0.6
+
+### Patch Changes
+
+- Move repo
+
 ## 0.0.5
 
 ### Patch Changes

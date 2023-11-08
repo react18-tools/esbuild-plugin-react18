@@ -28,6 +28,10 @@ describe.concurrent("Test plugin with ignorePatterns -- without content pattern"
 								{ pattern: /#555/, substitute: "#ccc" },
 							],
 						},
+						{
+							pathPattern: /client/,
+							replaceParams: [],
+						},
 					],
 				}),
 			],
