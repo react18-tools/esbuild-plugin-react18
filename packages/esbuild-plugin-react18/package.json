@@ -9,7 +9,7 @@
 	"scripts": {
 		"test": "vitest run --coverage",
 		"build": "tsc && node touchup.js",
-		"publish-package": "cd dist && npm publish --access public"
+		"publish-package": "cd dist && npm publish --provenance --access public"
 	},
 	"devDependencies": {
 		"@types/node": "^20.8.3",
