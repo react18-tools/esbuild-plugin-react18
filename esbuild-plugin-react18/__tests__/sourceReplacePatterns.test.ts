@@ -35,7 +35,7 @@ describe.concurrent("Test plugin with ignorePatterns -- without content pattern"
 					],
 				}),
 			],
-			entryPoints: await glob("../esbuild-plugin-react18-example/src/**/*.*"),
+			entryPoints: await glob("../packages/esbuild-plugin-react18-example/src/**/*.*"),
 			publicPath: "https://my.domain/static/",
 			external: ["react", "react-dom"],
 			outdir: "./test-build/" + outDir,
