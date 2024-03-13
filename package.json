@@ -8,11 +8,11 @@
 		"format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,css,scss}\""
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.26.2",
-		"eslint": "^8.51.0",
-		"prettier": "^3.0.3",
+		"@changesets/cli": "^2.27.1",
+		"eslint": "^8.57.0",
+		"prettier": "^3.2.5",
 		"tsconfig": "workspace:*",
-		"turbo": "^1.10.15"
+		"turbo": "^1.12.5"
 	},
 	"packageManager": "pnpm@8.6.10",
 	"name": "esbuild-plugin-react18"
