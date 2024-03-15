@@ -9,7 +9,7 @@
     "QJCiT5pTHTGKydoayOOp8": {
       "id": "QJCiT5pTHTGKydoayOOp8",
       "description": "Breakdown into smaller functions",
-      "columnId": "column-todo"
+      "columnId": "column-done"
     }
   },
   "columns": [
@@ -17,8 +17,7 @@
       "id": "column-todo",
       "title": "To do",
       "tasksIds": [
-        "task-DLMsMCnSbDOg6Q_qs3XX4",
-        "QJCiT5pTHTGKydoayOOp8"
+        "task-DLMsMCnSbDOg6Q_qs3XX4"
       ]
     },
     {
@@ -29,7 +28,9 @@
     {
       "id": "column-done",
       "title": "Done",
-      "tasksIds": []
+      "tasksIds": [
+        "QJCiT5pTHTGKydoayOOp8"
+      ]
     }
   ]
 }
