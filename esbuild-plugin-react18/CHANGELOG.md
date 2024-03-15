@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.1.0
+
+### Minor Changes
+
+- Support module level "use server" directive
+
 ## 0.0.7
 
 ### Patch Changes

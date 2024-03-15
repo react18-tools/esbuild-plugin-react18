@@ -2,7 +2,7 @@
 	"name": "esbuild-plugin-react18",
 	"author": "Mayank Kumar Chaudhari <https://mayank-chaudhari.vercel.app>",
 	"private": false,
-	"version": "0.0.7",
+	"version": "0.1.0",
 	"description": "Unleash the Power of React Server Components! ESBuild plugin to build RSC (React18 Server Components) compatible libraries.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
