@@ -10,8 +10,9 @@ export default defineConfig({
 		globals: true,
 		setupFiles: [],
 		coverage: {
-			reporter: ["text", "json", "html"],
+			include: ["src/**"],
+			exclude: ["src/**/index.ts", "src/**/declaration.d.ts"],
+			reporter: ["text", "json", "clover", "html"],
 		},
-		threads: true,
 	},
 });

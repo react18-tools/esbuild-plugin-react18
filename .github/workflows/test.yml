@@ -11,10 +11,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
       - run: npm i -g pnpm && pnpm i
         name: Install dependencies
       - run: pnpm build --filter esbuild-plugin-react18-example
@@ -24,6 +24,13 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
-          directory: ./packages/esbuild-plugin-react18
+          directory: ./esbuild-plugin-react18
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: esbuild-plugin-react18
+
+      - uses: paambaati/codeclimate-action@v5.0.0
+        continue-on-error: true
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageLocations: ./esbuild-plugin-react18/coverage/*.xml:clover

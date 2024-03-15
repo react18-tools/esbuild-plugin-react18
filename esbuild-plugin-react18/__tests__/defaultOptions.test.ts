@@ -7,6 +7,7 @@ describe.concurrent("Test plugin with default options in example build with tsup
 	const exampleBuildDir = path.resolve(
 		process.cwd(),
 		"..",
+		"packages",
 		"esbuild-plugin-react18-example",
 		"dist",
 	);
