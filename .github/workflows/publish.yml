@@ -4,7 +4,7 @@ name: Publish to NPM
 on:
   push:
     branches: [main]
-    paths: "packages/esbuild-plugin-react18/package.json"
+    paths: "esbuild-plugin-react18/package.json"
 
 jobs:
   publish:
@@ -19,16 +19,16 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./packages/esbuild-plugin-react18
+        working-directory: ./esbuild-plugin-react18
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           registry-url: https://registry.npmjs.org
       - run: npm i -g pnpm && pnpm i
         name: Install dependencies
@@ -58,3 +58,9 @@ jobs:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.event.repository.owner.login }}
           REPO: ${{ github.event.repository.name }}
+
+      - name: Mark scoped package as deprecated
+        run: |
+          npm deprecate @mayank1513/esbuild-plugin-react18 "Please use https://www.npmjs.com/package/esbuild-plugin-react18 instead. We initially created scoped packages to have similarities with the GitHub Public Repository (which requires packages to be scoped). We are no longer using GPR and thus deprecating all scoped packages for which corresponding un-scoped packages exist."
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
