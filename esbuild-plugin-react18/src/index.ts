@@ -1,14 +1,7 @@
 import type { BuildResult, OnLoadResult, Plugin, PluginBuild } from "esbuild";
 import fs from "node:fs";
 import path from "node:path";
-import {
-	testPathRegExp,
-	name,
-	ignoreNamespace,
-	keepNamespace,
-	useClientRegExp,
-	useServerRegExp,
-} from "./constants";
+import { testPathRegExp, name, ignoreNamespace, keepNamespace } from "./constants";
 
 interface ignorePattern {
 	pathPattern: RegExp;
@@ -124,15 +117,19 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
 	result.outputFiles
 		?.filter(f => !f.path.endsWith(".map"))
 		.forEach(f => {
-			const txt = f.text;
-			if (txt.match(useClientRegExp)) {
-				const text = '"use client";\n' + txt.replace(useClientRegExp, "");
-				f.contents = new TextEncoder().encode(text);
-			}
-			if (txt.match(useServerRegExp)) {
-				const text = '"use server";\n' + txt.replace(useServerRegExp, "");
-				f.contents = new TextEncoder().encode(text);
-			}
+			let txt = f.text;
+			txt = txt.replace(
+				/^(["']use strict["'];)?["']use client["'];?/i,
+				'"use client";\n"use strict";',
+			);
+
+			/** module level use server */
+			txt = txt.replace(
+				/^(["']use strict["'];)?["']use server["'];?/i,
+				'"use server";\n"use strict";',
+			);
+
+			f.contents = new TextEncoder().encode(txt);
 		});
 
 	/** handle buildReplacePatterns */
