@@ -1,0 +1,35 @@
+{
+  "scope": "Workspace",
+  "tasks": {
+    "task-DLMsMCnSbDOg6Q_qs3XX4": {
+      "id": "task-DLMsMCnSbDOg6Q_qs3XX4",
+      "description": "Support Sass\n- CSSPrefix --- default - ''\n- ClassName -> CSSFileName__class",
+      "columnId": "column-todo"
+    },
+    "QJCiT5pTHTGKydoayOOp8": {
+      "id": "QJCiT5pTHTGKydoayOOp8",
+      "description": "Breakdown into smaller functions",
+      "columnId": "column-todo"
+    }
+  },
+  "columns": [
+    {
+      "id": "column-todo",
+      "title": "To do",
+      "tasksIds": [
+        "task-DLMsMCnSbDOg6Q_qs3XX4",
+        "QJCiT5pTHTGKydoayOOp8"
+      ]
+    },
+    {
+      "id": "column-doing",
+      "title": "Doing",
+      "tasksIds": []
+    },
+    {
+      "id": "column-done",
+      "title": "Done",
+      "tasksIds": []
+    }
+  ]
+}
