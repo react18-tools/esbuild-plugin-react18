@@ -84,18 +84,23 @@ function ignoreFiles(ignorePattern: ignorePattern, build: PluginBuild) {
 	});
 }
 
+function replacePatterns({ replaceParams }: ReplacePattern, text: string) {
+	replaceParams.forEach(({ pattern, substitute }) => {
+		text = text.replace(pattern, substitute);
+	});
+	return text;
+}
+
 function replaceSource(sourceReplacePattern: ReplacePattern, build: PluginBuild) {
 	if (sourceReplacePattern.replaceParams.length === 0) return;
 	/** Add namespace file to avoid conflict with ignored files */
 	build.onLoad({ filter: sourceReplacePattern.pathPattern, namespace: "file" }, args => {
-		let contents = fs.readFileSync(args.path, "utf8");
+		let text = fs.readFileSync(args.path, "utf8");
 		/** todo: test if loader is a valid OnLoadResult.loader
 		 * If it is not a valid loader error will be thrown
 		 */
 		const loader = args.path.slice(args.path.lastIndexOf(".") + 1);
-		sourceReplacePattern.replaceParams.forEach(({ pattern, substitute }) => {
-			contents = contents.replace(pattern, substitute);
-		});
+		const contents = replacePatterns(sourceReplacePattern, text);
 		return { contents, loader } as OnLoadResult;
 	});
 }
@@ -103,13 +108,9 @@ function replaceSource(sourceReplacePattern: ReplacePattern, build: PluginBuild)
 function replaceBuild(buildReplacePattern: ReplacePattern, result: BuildResult) {
 	result.outputFiles
 		?.filter(f => buildReplacePattern.pathPattern.test(f.path))
-		.forEach(f => {
-			let text = f.text;
-			buildReplacePattern.replaceParams.forEach(({ pattern, substitute }) => {
-				text = text.replace(pattern, substitute);
-			});
-			f.contents = new TextEncoder().encode(text);
-		});
+		.forEach(
+			f => (f.contents = new TextEncoder().encode(replacePatterns(buildReplacePattern, f.text))),
+		);
 }
 
 function onEndCallBack(result: BuildResult, options: React18PluginOptions, write?: boolean) {
