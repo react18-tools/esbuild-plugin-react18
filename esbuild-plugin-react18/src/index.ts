@@ -1,7 +1,14 @@
-import { BuildResult, OnLoadResult, Plugin, PluginBuild, build } from "esbuild";
+import type { BuildResult, OnLoadResult, Plugin, PluginBuild } from "esbuild";
 import fs from "node:fs";
 import path from "node:path";
-import { testPathRegExp, name, ignoreNamespace, keepNamespace, useClientRegExp } from "./constants";
+import {
+	testPathRegExp,
+	name,
+	ignoreNamespace,
+	keepNamespace,
+	useClientRegExp,
+	useServerRegExp,
+} from "./constants";
 
 interface ignorePattern {
 	pathPattern: RegExp;
@@ -113,13 +120,17 @@ function replaceBuild(buildReplacePattern: ReplacePattern, result: BuildResult) 
 }
 
 function onEndCallBack(result: BuildResult, options: React18PluginOptions, write?: boolean) {
-	/** fix use client */
+	/** fix use client and use server*/
 	result.outputFiles
 		?.filter(f => !f.path.endsWith(".map"))
 		.forEach(f => {
 			const txt = f.text;
 			if (txt.match(useClientRegExp)) {
 				const text = '"use client";\n' + txt.replace(useClientRegExp, "");
+				f.contents = new TextEncoder().encode(text);
+			}
+			if (txt.match(useServerRegExp)) {
+				const text = '"use server";\n' + txt.replace(useServerRegExp, "");
 				f.contents = new TextEncoder().encode(text);
 			}
 		});
