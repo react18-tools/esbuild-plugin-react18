@@ -4,7 +4,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const owner = process.env.OWNER;
+const owner = "mayank1513";
 const packageJson = require(path.resolve(process.cwd(), "package.json"));
 const ref = packageJson.name;
 if (!ref.startsWith(`@${owner}`)) {
