@@ -142,7 +142,7 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
 	}
 
 	/** remove empty files */
-	result.outputFiles = result.outputFiles?.filter(f => f.text.trim() !== "");
+	// result.outputFiles = result.outputFiles?.filter(f => f.text.trim() !== "");
 	/** assume true if undefined */
 	if (write === undefined || write) {
 		result.outputFiles?.forEach(file => {
