@@ -114,6 +114,11 @@ function replaceBuild(buildReplacePattern: ReplacePattern, result: BuildResult) 
 }
 
 function onEndCallBack(result: BuildResult, options: React18PluginOptions, write?: boolean) {
+	/** remove empty file imports */
+	const emptyChunkFiles = result.outputFiles
+		?.filter(f => f.text.trim() === "" && f.path.includes("chunk"))
+		.map(f => f.path.split(path.sep).pop());
+
 	/** fix use client and use server*/
 	result.outputFiles
 		?.filter(f => !f.path.endsWith(".map"))
@@ -130,6 +135,11 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
 				'"use server";\n"use strict";',
 			);
 
+			/** remove empty file imports */
+			emptyChunkFiles?.forEach(chunkFile => {
+				txt = txt.replace(new RegExp(`import"[^"]*${chunkFile}";`, "g"), "");
+			});
+
 			f.contents = new TextEncoder().encode(txt);
 		});
 
@@ -142,9 +152,7 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
 	}
 
 	/** remove empty files */
-	result.outputFiles = result.outputFiles?.filter(
-		f => f.path.includes("chunk") || f.text.trim() !== "",
-	);
+	result.outputFiles = result.outputFiles?.filter(f => f.text.trim() !== "");
 	/** assume true if undefined */
 	if (write === undefined || write) {
 		result.outputFiles?.forEach(file => {

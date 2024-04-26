@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.1.2
+
+### Patch Changes
+
+- Remove empty chunk import instead
+
 ## 0.1.1
 
 ### Patch Changes
