@@ -119,7 +119,10 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
 		?.filter(f => f.text.trim() === "" && f.path.includes("chunk"))
 		.map(f => f.path.split(path.sep).pop());
 
-	const emptyChunkImportRegExp = new RegExp(`import"[^"]*(${emptyChunkFiles?.join("|")})";`, "g");
+	const emptyChunkImportRegExp = new RegExp(
+		`import *"[^"]*(${emptyChunkFiles?.join("|")})";[\n\r ]*`,
+		"g",
+	);
 	/** fix use client and use server*/
 	result.outputFiles
 		?.filter(f => !f.path.endsWith(".map"))
