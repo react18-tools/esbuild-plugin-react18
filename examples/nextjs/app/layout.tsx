@@ -1,4 +1,4 @@
-import { ForkMe } from "esbuild-plugin-react18-example/server";
+import { ForkMe } from "esbuild-plugin-react18-example/dist/server";
 import "./globals.css";
 import { ThemeSwitcher } from "nextjs-themes";
 import { ServerSideWrapper } from "nextjs-themes/server/nextjs";

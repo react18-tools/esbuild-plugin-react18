@@ -1,6 +1,6 @@
 # esbuild-plugin-react18
 
-[![test](https://github.com/mayank1513/esbuild-plugin-react18/actions/workflows/test.yml/badge.svg)](https://github.com/mayank1513/esbuild-plugin-react18/actions/workflows/test.yml) [![codecov](https://codecov.io/gh/mayank1513/esbuild-plugin-react18/graph/badge.svg)](https://codecov.io/gh/mayank1513/esbuild-plugin-react18) [![Maintainability](https://api.codeclimate.com/v1/badges/c5e44df548df962f3df5/maintainability)](https://codeclimate.com/github/mayank1513/esbuild-plugin-react18/maintainability) [![Version](https://img.shields.io/npm/v/esbuild-plugin-react18.svg?colorB=green)](https://www.npmjs.com/package/esbuild-plugin-react18) [![Downloads](https://img.jsdelivr.com/img.shields.io/npm/dt/esbuild-plugin-react18.svg)](https://www.npmjs.com/package/esbuild-plugin-react18) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/esbuild-plugin-react18)
+[![test](https://github.com/mayank1513/esbuild-plugin-react18/actions/workflows/test.yml/badge.svg)](https://github.com/mayank1513/esbuild-plugin-react18/actions/workflows/test.yml) [![codecov](https://codecov.io/gh/mayank1513/esbuild-plugin-react18/graph/badge.svg)](https://codecov.io/gh/mayank1513/esbuild-plugin-react18) [![Maintainability](https://api.codeclimate.com/v1/badges/c5e44df548df962f3df5/maintainability)](https://codeclimate.com/github/mayank1513/esbuild-plugin-react18/maintainability) [![Version](https://img.shields.io/npm/v/esbuild-plugin-react18.svg?colorB=green)](https://www.npmjs.com/package/esbuild-plugin-react18) [![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/esbuild-plugin-react18.svg)](https://www.npmjs.com/package/esbuild-plugin-react18) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/esbuild-plugin-react18)
 
 <img src="esbuild-react18.jpg" title="Build Awesome Libraries using React Server Components and make your Mark!" style="width:100%"/>
 
@@ -14,6 +14,7 @@ This is an `esbuild` plugin for compiling libraries compatible with React 18 ser
 ✅ Build libraries for all build systems/tools/frameworks supporting React18\
 ✅ Unleash the power of combining react client and server components in your libraries\
 ✅ Full TypeScript support out of the box\
+✅ Supports CJS and ESM builds out of the box
 ✅ Simple and tiny\
 ✅ Easy to use — just add the plugin, and you are good to go\
 ✅ All in one plugin for building react18 libraries with `tsup` or `esbuild`\

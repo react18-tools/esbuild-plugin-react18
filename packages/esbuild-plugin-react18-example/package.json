@@ -4,8 +4,9 @@
 	"private": true,
 	"version": "0.0.0",
 	"description": "An intuitive React.js fork me ribbon component for promoting open source project forks.",
-	"main": "./index.ts",
-	"types": "./index.ts",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"module": "./dist/esm/index.mjs",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/mayank1513/turborepo-template.git"
@@ -24,7 +25,6 @@
 	},
 	"devDependencies": {
 		"@testing-library/react": "^15.0.2",
-		"@turbo/gen": "^1.13.2",
 		"@types/node": "^20.12.7",
 		"@types/react": "^18.2.79",
 		"@types/react-dom": "^18.2.25",
