@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.1.4
+
+### Patch Changes
+
+- Fix esm build for non minified cases
+
 ## 0.1.3
 
 ### Patch Changes
