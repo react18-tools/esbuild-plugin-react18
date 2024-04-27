@@ -119,6 +119,7 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
 		?.filter(f => f.text.trim() === "" && f.path.includes("chunk"))
 		.map(f => f.path.split(path.sep).pop());
 
+	const emptyChunkImportRegExp = new RegExp(`import"[^"]*(${emptyChunkFiles?.join("|")})";`, "g");
 	/** fix use client and use server*/
 	result.outputFiles
 		?.filter(f => !f.path.endsWith(".map"))
@@ -136,9 +137,7 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
 			);
 
 			/** remove empty file imports */
-			emptyChunkFiles?.forEach(chunkFile => {
-				txt = txt.replace(new RegExp(`import"[^"]*${chunkFile}";`, "g"), "");
-			});
+			txt = txt.replace(emptyChunkImportRegExp, "");
 
 			f.contents = new TextEncoder().encode(txt);
 		});
