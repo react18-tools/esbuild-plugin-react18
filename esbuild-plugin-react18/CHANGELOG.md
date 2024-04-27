@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.1.3
+
+### Patch Changes
+
+- Optimise and touch up
+
 ## 0.1.2
 
 ### Patch Changes
