@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.1.5
+
+### Patch Changes
+
+- Fix: Avoid regexp creating havoc with CSS imports when no empty chunks found.
+
 ## 0.1.4
 
 ### Patch Changes
