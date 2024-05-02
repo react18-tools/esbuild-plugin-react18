@@ -120,9 +120,10 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
 		.map(f => f.path.split(path.sep).pop());
 
 	const emptyChunkImportRegExp = new RegExp(
-		`import *"[^"]*(${emptyChunkFiles?.join("|")})";[\n\r ]*`,
+		`import *"[^"]*(${emptyChunkFiles?.join("|") || "--no-empty-chunks--"})";[\n\r ]*`,
 		"g",
 	);
+
 	/** fix use client and use server*/
 	result.outputFiles
 		?.filter(f => !f.path.endsWith(".map"))
