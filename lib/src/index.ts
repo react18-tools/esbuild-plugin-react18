@@ -105,7 +105,7 @@ function replaceSource(sourceReplacePattern: ReplacePattern, build: PluginBuild)
   if (sourceReplacePattern.replaceParams.length === 0) return;
   /** Add namespace file to avoid conflict with ignored files */
   build.onLoad({ filter: sourceReplacePattern.pathPattern, namespace: "file" }, args => {
-    let text = fs.readFileSync(args.path, "utf8");
+    const text = fs.readFileSync(args.path, "utf8");
     /** todo: test if loader is a valid OnLoadResult.loader
      * If it is not a valid loader error will be thrown
      */

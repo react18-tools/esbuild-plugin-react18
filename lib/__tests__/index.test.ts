@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { describe, test, beforeAll } from "vitest";
-import esbuild, { build } from "esbuild";
+import esbuild from "esbuild";
 import react18Plugin, { React18PluginOptions } from "../src";
 import glob from "tiny-glob";
 import cssPlugin from "esbuild-plugin-react18-css";
