@@ -262,6 +262,9 @@ importers:
 
   lib:
     dependencies:
+      '@types/react':
+        specifier: 16.8 - 19
+        version: 18.3.1
       next:
         specifier: 10 - 14
         version: 14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0)
@@ -278,12 +281,6 @@ importers:
       '@types/node':
         specifier: ^20.12.10
         version: 20.12.10
-      '@types/react':
-        specifier: ^18.3.1
-        version: 18.3.1
-      '@types/react-dom':
-        specifier: ^18.3.0
-        version: 18.3.0
       '@vitest/coverage-v8':
         specifier: ^1.6.0
         version: 1.6.0(vitest@1.6.0(@types/node@20.12.10)(jsdom@24.0.0)(sass@1.77.0))
