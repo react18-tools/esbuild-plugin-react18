@@ -44,6 +44,7 @@
     "vitest": "^1.6.0"
   },
   "dependencies": {
+    "esbuild": "^0.21.1",
     "r18gs": "^1.0.2"
   },
   "peerDependencies": {
