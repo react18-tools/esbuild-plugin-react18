@@ -1,6 +1,8 @@
-import { HTMLProps } from "react";
+import { HTMLProps, ReactNode } from "react";
 
-interface DummyProps extends HTMLProps<HTMLDivElement> {}
+interface DummyProps extends HTMLProps<HTMLDivElement> {
+  children: ReactNode;
+}
 
 /**
  *
