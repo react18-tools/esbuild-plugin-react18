@@ -95,7 +95,7 @@ describe.concurrent("Test PlugInOptions", () => {
     expect(fs.existsSync(path.resolve(buildDir, "client", "demo", "demo.tsx"))).toBe(false);
   });
 
-  /** Fix The plugin didn't set a resolve directory for the file - so esbuild did not search for "react18-loaders" on the file system */
+  /** TODO: Fix The plugin didn't set a resolve directory for the file - so esbuild did not search for "react18-loaders" on the file system */
   test.todo("Test plugin with ignorePatterns with content pattern", async ({ expect }) => {
     const { buildDir, ...optinos } = await createEsBUildOptions("ignore-patterns-1", {
       ignorePatterns: [{ pathPattern: /global-loader/, contentPatterns: [/ignore-me/] }],
@@ -105,6 +105,15 @@ describe.concurrent("Test PlugInOptions", () => {
     expect(fs.existsSync(path.resolve(buildDir, "client", "global-loader", "dummy.ts"))).toBe(
       false,
     );
+  });
+
+  test("Test plugin with ignorePatterns with content pattern", async ({ expect }) => {
+    const { buildDir, ...optinos } = await createEsBUildOptions("ignore-patterns-1", {
+      ignorePatterns: [{ pathPattern: /dummy/, contentPatterns: [/ignore-me/] }],
+    });
+    await esbuild.build(optinos);
+    expect(fs.existsSync(path.resolve(buildDir, "client", "dummy"))).toBe(true);
+    expect(fs.existsSync(path.resolve(buildDir, "client", "dummy", "ignore.ts"))).toBe(false);
   });
 
   test('Test sourceReplacePatterns: defaultBgColor should be "#3c3c3c"', async ({ expect }) => {
