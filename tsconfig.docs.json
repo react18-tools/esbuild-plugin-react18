@@ -5,5 +5,5 @@
     "types": ["node"]
   },
   "include": ["./lib/src/**/*.*"],
-  "exclude": ["**/*.test.tsx", "**/index.ts", "dist", "build", "node_modules"]
+  "exclude": ["**/*.test.tsx", "dist", "build", "node_modules"]
 }
