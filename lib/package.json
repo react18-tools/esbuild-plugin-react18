@@ -16,9 +16,9 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup && tsc -p tsconfig-build.json",
+    "build": "tsup",
     "clean": "rm -rf dist",
-    "dev": "tsup --watch && tsc -p tsconfig-build.json -w",
+    "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/",
     "test": "vitest run --coverage"
