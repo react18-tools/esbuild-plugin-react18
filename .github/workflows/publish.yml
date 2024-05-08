@@ -34,8 +34,8 @@ jobs:
         run: |
           git config --global user.name "mayank1513"
           git config --global user.email "mayank.srmu@gmail.com"
-      # - name: Copy Readme file
-      # run: cp ../README.md . # will be uncommented while rebranding
+      - name: Copy Readme file
+        run: cp ../README.md . # will be uncommented while rebranding
       - name: Apply changesets, publish and create release, branches and tags
         run: node ./scripts/publish.js
         env:

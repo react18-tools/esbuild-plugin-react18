@@ -8,8 +8,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md,css,scss}\"",
     "lint": "turbo lint",
     "test": "turbo test",
-    "typecheck": "turbo typecheck",
-    "postinstall": "node scripts/rebrand.js"
+    "typecheck": "turbo typecheck"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",

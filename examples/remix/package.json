@@ -19,8 +19,9 @@
     "@repo/shared": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react18-loaders": "workspace:*",
-    "react18-themes": "^3.1.0"
+    "react18-loaders": "latest",
+    "react18-themes": "^3.1.0",
+    "esbuild-plugin-react18": "workspace:*"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.9.1",
