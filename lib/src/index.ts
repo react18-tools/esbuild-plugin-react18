@@ -21,7 +21,7 @@ interface ReplacePattern {
   replaceParams: { pattern: RegExp; substitute: string }[];
 }
 
-interface React18PluginOptions {
+export interface React18PluginOptions {
   /** to not ignore test files */
   keepTests?: boolean;
 

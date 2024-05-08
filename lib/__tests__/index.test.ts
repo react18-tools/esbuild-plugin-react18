@@ -1,45 +1,43 @@
 import fs from "node:fs";
 import path from "node:path";
 import { describe, test, beforeAll } from "vitest";
-import esbuild from "esbuild";
-import react18Plugin from "../src";
+import esbuild, { build } from "esbuild";
+import react18Plugin, { React18PluginOptions } from "../src";
 import glob from "tiny-glob";
 import cssPlugin from "esbuild-plugin-react18-css";
 
-/**
- * buildReplacePatterns could be very helpful in removing unnecessary comments introduced while bundling from other libraries
- */
-describe.concurrent("Test plugin with ignorePatterns -- without content pattern", async () => {
-  const outDir = "build-replace-patterns";
+const outDirPrefix = "./__tests__/build/";
+const srcPattern = "../packages/shared/src/**/*.*";
+
+/** Utility funciton to create build options and buildDir */
+async function createEsBUildOptions(
+  outDir: string,
+  pluginOptions?: React18PluginOptions,
+): Promise<esbuild.BuildOptions & { buildDir: string }> {
   const buildDir = path.resolve(__dirname, "build", outDir);
   try {
-    fs.unlinkSync(path.resolve(buildDir));
+    fs.rmSync(buildDir, { recursive: true });
+    fs.unlinkSync(buildDir);
   } catch {}
+  return {
+    format: "cjs",
+    target: "es2019",
+    sourcemap: false,
+    bundle: true,
+    minify: true,
+    plugins: [react18Plugin(pluginOptions), cssPlugin()],
+    entryPoints: await glob(srcPattern),
+    external: ["react", "react-dom"],
+    outdir: outDirPrefix + outDir,
+    buildDir,
+  };
+}
+
+describe.concurrent("Test plugin with ESBuild with default options", async () => {
+  const { buildDir, ...options } = await createEsBUildOptions("default-options");
+
   beforeAll(async () => {
-    await esbuild.build({
-      format: "cjs",
-      target: "es2019",
-      sourcemap: false,
-      bundle: true,
-      minify: true,
-      plugins: [
-        react18Plugin({
-          buildReplacePatterns: [
-            {
-              pathPattern: /constants/,
-              replaceParams: [
-                { pattern: /aaa/, substitute: "3c3c3c" },
-                { pattern: /#555/, substitute: "#ccc" },
-              ],
-            },
-          ],
-        }),
-        cssPlugin(),
-      ],
-      entryPoints: await glob("../packages/shared/src/**/*.*"),
-      external: ["react", "react-dom"],
-      outdir: "./__tests__/build/" + outDir,
-    });
+    await esbuild.build(options);
   });
 
   test(`"use client"; directive should be present in client components`, ({ expect }) => {
@@ -50,8 +48,50 @@ describe.concurrent("Test plugin with ignorePatterns -- without content pattern"
     const text = fs.readFileSync(path.resolve(buildDir, "server", "index.js"), "utf-8");
     expect(/^"use client";\n/m.test(text)).toBe(false);
   });
-  test(`defaultBgColor should be "#3c3c3c" and defaultColor should be "#ccc"`, ({ expect }) => {
+});
+
+describe.concurrent("Test PlugInOptions", () => {
+  /**
+   * buildReplacePatterns could be very helpful in removing unnecessary comments introduced while bundling from other libraries
+   */
+  test('Test buildReplacePatterns: defaultBgColor should be "#3c3c3c" and defaultColor should be "#ccc"', async ({
+    expect,
+  }) => {
+    const { buildDir, ...options } = await createEsBUildOptions("build-replace-patterns", {
+      buildReplacePatterns: [
+        {
+          pathPattern: /constants/,
+          replaceParams: [
+            { pattern: /aaa/, substitute: "3c3c3c" },
+            { pattern: /#555/, substitute: "#ccc" },
+          ],
+        },
+      ],
+    });
+    await esbuild.build(options);
     const text = fs.readFileSync(path.resolve(buildDir, "server", "constants.js"), "utf-8");
     expect(text.includes("3c3c3c")).toBe(true);
   });
+
+  test("Test plugin with ignorePatterns -- without content pattern", async ({ expect }) => {
+    const { buildDir, ...optinos } = await createEsBUildOptions("ignore-patterns-0", {
+      ignorePatterns: [{ pathPattern: /demo/ }],
+    });
+    await esbuild.build(optinos);
+    expect(fs.existsSync(path.resolve(buildDir, "client", "demo"))).toBe(false);
+  });
+
+  /**
+   * When content pattern is provided only the ignorePattern files having content matching the content pattern will be removed
+   */
+  // test("Test plugin with ignorePatterns with content pattern", async ({ expect }) => {
+  //   const { buildDir, ...optinos } = await createEsBUildOptions("ignore-patterns-1", {
+  //     ignorePatterns: [{ pathPattern: /demo/, contentPatterns: [/ignore-me/] }],
+  //   });
+  //   await esbuild.build(optinos);
+  //   expect(fs.existsSync(path.resolve(buildDir, "client", "demo"))).toBe(true);
+  //   expect(fs.existsSync(path.resolve(buildDir, "client", "demo", "with-ignore-pattern.ts"))).toBe(
+  //     false,
+  //   );
+  // });
 });
