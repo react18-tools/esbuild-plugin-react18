@@ -6,7 +6,7 @@ We provide support for the latest minor version. Pull requests aimed at fixing s
 
 | Version | Support Status     |
 | ------- | ------------------ |
-| 0.0.x   | :white_check_mark: |
+| 0.1.x   | :white_check_mark: |
 | 0.0.x   | :warning:          |
 | < 0.0   | :x:                |
 
@@ -20,4 +20,4 @@ Note: We only accept pull requests addressing security vulnerabilities. Addition
 
 ## Reporting Vulnerabilities
 
-Kindly report vulnerabilities [here](https://github.com/react18-tools/turborepo-template/security/advisories/new).
+Kindly report vulnerabilities [here](https://github.com/react18-tools/esbuild-plugin-react18/security/advisories/new).

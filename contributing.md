@@ -29,7 +29,7 @@ This TurboRepo comprises the following packages/examples, all written in [TypeSc
 - `@repo/jest-presets`: Jest presets for unit testing
 - `@repo/logger`: A configurable shared logger utility
 - `@repo/shared`: An internal library of components utilized by the examples
-- `react18-loaders`: a React component library (The core package published to NPM)
+- `react18-loaders`: An ESBuild plugin for React18 (The core package published to NPM)
 
 ## Automated File Generation
 

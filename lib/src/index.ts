@@ -14,7 +14,7 @@ interface ReplacePattern {
 }
 
 interface React18PluginOptions {
-  /** to not ignore tese files */
+  /** to not ignore test files */
   keepTests?: boolean;
 
   /** to not remove `data-testid` attributes. If `keepTests` is true,
@@ -34,19 +34,21 @@ interface React18PluginOptions {
   /**
    * regExp patterns to find and replace in source files before build
    *
-   * Use with caution! Make sure same file do not match multiple patterns
+   * Use with caution! Make sure the same file does not match multiple patterns
    * to avoid any unexpected results.
    *
    * Caution! - if you have not enabled `keepTests`, we are already using
-   * `/.*\.(j|t)s(x)?$/` pattern to remove `data-testid` attributes. If your
+   * `/.*\.(j|t)s(x)?$/` pattern to remove `
+
+data-testid` attributes. If your
    * `sourceReplacePatterns` collide with these files, please set `keepTestIds`
-   * to `true` and handle removing testsids yourself.
+   * to `true` and handle removing testids yourself.
    */
   sourceReplacePatterns?: ReplacePattern[];
 
   /**
    * regExp patterns to find and replace in build files after build
-   * Use with caution! Make sure same file do not match multiple patterns
+   * Use with caution! Make sure the same file does not match multiple patterns
    * to avoid any unexpected results.
    */
   buildReplacePatterns?: ReplacePattern[];
