@@ -265,19 +265,16 @@ importers:
       next:
         specifier: 10 - 14
         version: 14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0)
+      react:
+        specifier: 16.8 - 19
+        version: 18.3.1
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../packages/config-eslint
-      '@repo/jest-presets':
-        specifier: workspace:*
-        version: link:../packages/jest-presets
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../packages/config-typescript
-      '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/node':
         specifier: ^20.12.10
         version: 20.12.10
@@ -287,9 +284,6 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.0
         version: 18.3.0
-      '@vitejs/plugin-react':
-        specifier: ^4.2.1
-        version: 4.2.1(vite@5.2.11(@types/node@20.12.10)(sass@1.77.0))
       '@vitest/coverage-v8':
         specifier: ^1.6.0
         version: 1.6.0(vitest@1.6.0(@types/node@20.12.10)(jsdom@24.0.0)(sass@1.77.0))
@@ -299,15 +293,6 @@ importers:
       esbuild-plugin-react18-css:
         specifier: ^0.0.4
         version: 0.0.4
-      jsdom:
-        specifier: ^24.0.0
-        version: 24.0.0
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
       tiny-glob:
         specifier: ^0.2.9
         version: 0.2.9
