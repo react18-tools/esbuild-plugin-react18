@@ -118,6 +118,9 @@ importers:
       '@repo/shared':
         specifier: workspace:*
         version: link:../../packages/shared
+      esbuild-plugin-react18:
+        specifier: workspace:*
+        version: link:../../lib
       next:
         specifier: ^14.2.3
         version: 14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0)
@@ -131,8 +134,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react18-loaders:
-        specifier: workspace:*
-        version: link:../../lib
+        specifier: latest
+        version: 1.0.0(@types/react@18.3.1)(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0))(react@18.3.1)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^14.2.3
@@ -179,6 +182,9 @@ importers:
       '@vercel/remix-entry-server':
         specifier: ^0.1.1
         version: 0.1.1(react@18.3.1)
+      esbuild-plugin-react18:
+        specifier: workspace:*
+        version: link:../../lib
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -186,8 +192,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react18-loaders:
-        specifier: workspace:*
-        version: link:../../lib
+        specifier: latest
+        version: 1.0.0(@types/react@18.3.1)(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0))(react@18.3.1)
       react18-themes:
         specifier: ^3.1.0
         version: 3.1.0(@remix-run/node@2.9.1(typescript@5.4.5))(@remix-run/react@2.9.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@types/react@18.3.1)(next@14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0))(react@18.3.1)
@@ -216,6 +222,9 @@ importers:
       '@repo/shared':
         specifier: workspace:*
         version: link:../../packages/shared
+      esbuild-plugin-react18:
+        specifier: workspace:*
+        version: link:../../lib
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -223,8 +232,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react18-loaders:
-        specifier: workspace:*
-        version: link:../../lib
+        specifier: latest
+        version: 1.0.0(@types/react@18.3.1)(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0))(react@18.3.1)
       react18-themes:
         specifier: ^3.1.0
         version: 3.1.0(@remix-run/node@2.9.1(typescript@5.4.5))(@remix-run/react@2.9.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@types/react@18.3.1)(next@14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0))(react@18.3.1)
@@ -255,7 +264,7 @@ importers:
     dependencies:
       next:
         specifier: 10 - 14
-        version: 14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.76.0)
+        version: 14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0)
       r18gs:
         specifier: ^1.0.2
         version: 1.0.2(@types/react@18.3.1)(react@18.3.1)
@@ -380,6 +389,9 @@ importers:
       '@repo/scripts':
         specifier: workspace:*
         version: link:../../scripts
+      esbuild-plugin-react18:
+        specifier: workspace:*
+        version: link:../../lib
       nextjs-themes:
         specifier: ^3.1.1
         version: 3.1.1(@types/react@18.3.1)(next@14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0))(react@18.3.1)
@@ -390,8 +402,8 @@ importers:
         specifier: ^4.1.6
         version: 4.1.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react18-loaders:
-        specifier: workspace:*
-        version: link:../../lib
+        specifier: latest
+        version: 1.0.0(@types/react@18.3.1)(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0))(react@18.3.1)
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -420,9 +432,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^1.6.0
         version: 1.6.0(vitest@1.6.0(@types/node@20.12.10)(jsdom@24.0.0)(sass@1.77.0))
-      esbuild-plugin-react18:
-        specifier: ^0.1.5
-        version: 0.1.5
       esbuild-plugin-react18-css:
         specifier: ^0.0.4
         version: 0.0.4
@@ -5439,6 +5448,16 @@ packages:
     peerDependencies:
       react: '>=16.8'
 
+  react18-loaders@1.0.0:
+    resolution: {integrity: sha512-FEKh8r6XHOOrovwXSsA9gHMGPowijIrqSR3oUaWsI949mNVcpNpjvcpOs0icKXdSLCRB2RNy0pdfr/KllrhnFQ==}
+    peerDependencies:
+      '@types/react': 16.8 - 19
+      next: 10 - 14
+      react: 16.8 - 19
+    peerDependenciesMeta:
+      next:
+        optional: true
+
   react18-themes@3.1.0:
     resolution: {integrity: sha512-Wk5Zsv3/Hkb9o28yOcWgBf3xhy5OpBTCcm++szVjfrvfeRH0a85PyIH8puk47EYf3MEsnSiOtCwT286/lXmpTA==}
     peerDependencies:
@@ -5647,11 +5666,6 @@ packages:
 
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
-
-  sass@1.76.0:
-    resolution: {integrity: sha512-nc3LeqvF2FNW5xGF1zxZifdW3ffIz5aBb7I7tSvOoNu7z1RQ6pFt9MBuiPtjgaI62YWrM/txjWlOCFiGtf2xpw==}
-    engines: {node: '>=14.0.0'}
-    hasBin: true
 
   sass@1.77.0:
     resolution: {integrity: sha512-eGj4HNfXqBWtSnvItNkn7B6icqH14i3CiCGbzMKs3BAPTq62pp9NBYsBgyN4cA+qssqo9r26lW4JSvlaUUWbgw==}
@@ -8535,7 +8549,7 @@ snapshots:
       '@babel/plugin-syntax-typescript': 7.24.1(@babel/core@7.24.5)
       '@vanilla-extract/babel-plugin-debug-ids': 1.0.5
       '@vanilla-extract/css': 1.15.1
-      esbuild: 0.17.6
+      esbuild: 0.19.12
       eval: 0.1.8
       find-up: 5.0.0
       javascript-stringify: 2.1.0
@@ -12386,32 +12400,6 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  next@14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.76.0):
-    dependencies:
-      '@next/env': 14.2.3
-      '@swc/helpers': 0.5.5
-      busboy: 1.6.0
-      caniuse-lite: 1.0.30001616
-      graceful-fs: 4.2.11
-      postcss: 8.4.31
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      styled-jsx: 5.1.1(@babel/core@7.24.5)(react@18.3.1)
-    optionalDependencies:
-      '@next/swc-darwin-arm64': 14.2.3
-      '@next/swc-darwin-x64': 14.2.3
-      '@next/swc-linux-arm64-gnu': 14.2.3
-      '@next/swc-linux-arm64-musl': 14.2.3
-      '@next/swc-linux-x64-gnu': 14.2.3
-      '@next/swc-linux-x64-musl': 14.2.3
-      '@next/swc-win32-arm64-msvc': 14.2.3
-      '@next/swc-win32-ia32-msvc': 14.2.3
-      '@next/swc-win32-x64-msvc': 14.2.3
-      sass: 1.76.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - babel-plugin-macros
-
   next@14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0):
     dependencies:
       '@next/env': 14.2.3
@@ -13062,6 +13050,14 @@ snapshots:
       '@remix-run/router': 1.16.0
       react: 18.3.1
 
+  react18-loaders@1.0.0(@types/react@18.3.1)(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0))(react@18.3.1):
+    dependencies:
+      '@types/react': 18.3.1
+      r18gs: 1.0.2(@types/react@18.3.1)(react@18.3.1)
+      react: 18.3.1
+    optionalDependencies:
+      next: 14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0)
+
   react18-themes@3.1.0(@remix-run/node@2.9.1(typescript@5.4.5))(@remix-run/react@2.9.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@types/react@18.3.1)(next@14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0))(react@18.3.1):
     dependencies:
       '@types/react': 18.3.1
@@ -13331,13 +13327,6 @@ snapshots:
       is-regex: 1.1.4
 
   safer-buffer@2.1.2: {}
-
-  sass@1.76.0:
-    dependencies:
-      chokidar: 3.6.0
-      immutable: 4.3.5
-      source-map-js: 1.2.0
-    optional: true
 
   sass@1.77.0:
     dependencies:
