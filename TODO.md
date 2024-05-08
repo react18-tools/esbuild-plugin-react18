@@ -16,7 +16,7 @@
 - [ ] 🌟 Enable [private vulnerability reporting](https://github.com/react18-tools/esbuild-plugin-react18/security)
 - [ ] Set up `CodeCov`
   - Visit Codecov and set up your repo
-  - Create [repository secret]((https://github.com/react18-tools/esbuild-plugin-react18/settings/secrets/actions)) for `CODECOV_TOKEN`
+  - Create [repository secret](<(https://github.com/react18-tools/esbuild-plugin-react18/settings/secrets/actions)>) for `CODECOV_TOKEN`
 - [ ] Set up `CodeClimate`
   - Visit CodeClimate and set up your repo
   - Create [repository secret] for `CC_TEST_REPORTER_ID`
