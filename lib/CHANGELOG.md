@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.1.6
+
+### Patch Changes
+
+- 420d4ad: Add ESM build and minify CJS build
+
 ## 0.1.5
 
 ### Patch Changes
