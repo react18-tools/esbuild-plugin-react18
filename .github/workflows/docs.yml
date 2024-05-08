@@ -23,7 +23,7 @@ jobs:
       - run: npm i -g pnpm@9.0.5 && pnpm i
         name: Install dependencies
       - name: Test
-        run: npm test
+        run: pnpm build && pnpm test
       - run: git status && git clean -f -d && git status
         name: clean up working directory
       - run: npx @turbo/codemod update . && pnpm update --latest -r
