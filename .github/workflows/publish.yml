@@ -4,22 +4,17 @@ name: Publish to NPM
 on:
   push:
     branches: [main]
-    paths: "esbuild-plugin-react18/package.json"
+    paths: "lib/package.json"
 
 jobs:
   publish:
     # Don't run just after creating repo from template
     # Also avoid running after merging set-up PR
-    if: github.run_number > 2
+    if: github.run_number > 2 && github.event.repository.owner.login == 'react18-tools'
     runs-on: ubuntu-latest
     permissions:
-      packages: write
       contents: write
       id-token: write
-
-    defaults:
-      run:
-        working-directory: ./esbuild-plugin-react18
 
     steps:
       - uses: actions/checkout@v4
@@ -30,37 +25,22 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org
-      - run: npm i -g pnpm && pnpm i
+      - run: npm i -g pnpm@9.0.5 && pnpm i
         name: Install dependencies
-      - run: pnpm build --filter esbuild-plugin-react18-example
-        name: build example app to run tests
-        working-directory: .
         # fail and not publish if any of the unit tests are failing
       - name: Test
         run: pnpm test
-      - name: Create release and Publish to NPM
-        run: pnpm publish-package
-        # continue on error to publish scoped package name <- by default repo is setup for a non-scoped + scoped package name
-        continue-on-error: true
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OWNER: ${{ github.event.repository.owner.login }}
-          REPO: ${{ github.event.repository.name }}
-
-      - name: Publish Scoped package to NPM
-        # continue on error - expecing npm to trow error if scoping is done twice
-        continue-on-error: true
-        id: publish_scoped
-        run: cd dist && node ../scope.js && npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OWNER: ${{ github.event.repository.owner.login }}
-          REPO: ${{ github.event.repository.name }}
-
-      - name: Mark scoped package as deprecated
+      - name: Setup Git
         run: |
-          npm deprecate @mayank1513/esbuild-plugin-react18 "Please use https://www.npmjs.com/package/esbuild-plugin-react18 instead. We initially created scoped packages to have similarities with the GitHub Public Repository (which requires packages to be scoped). We are no longer using GPR and thus deprecating all scoped packages for which corresponding un-scoped packages exist."
+          git config --global user.name "mayank1513"
+          git config --global user.email "mayank.srmu@gmail.com"
+      - name: Copy Readme file
+        run: cp ../README.md . # will be uncommented while rebranding
+      - name: Apply changesets, publish and create release, branches and tags
+        run: node ./scripts/publish.js
         env:
+          BRANCH: ${{ github.ref_name }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}

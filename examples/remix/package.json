@@ -1,0 +1,37 @@
+{
+  "name": "@example/remix",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint app/"
+  },
+  "dependencies": {
+    "@remix-run/node": "^2.9.1",
+    "@remix-run/react": "^2.9.1",
+    "@remix-run/serve": "^2.9.1",
+    "@remix-run/server-runtime": "^2.9.1",
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/remix-entry-server": "^0.1.1",
+    "@repo/shared": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react18-loaders": "latest",
+    "react18-themes": "^3.1.0",
+    "esbuild-plugin-react18": "workspace:*"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.9.1",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

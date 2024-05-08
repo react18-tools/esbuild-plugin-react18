@@ -1,4 +1,5 @@
 packages:
   - "examples/*"
   - "packages/*"
-  - "esbuild-plugin-react18"
+  - "lib"
+  - "scripts"

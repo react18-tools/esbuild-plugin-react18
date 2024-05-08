@@ -1,0 +1,101 @@
+{
+  "name": "esbuild-plugin-react18",
+  "author": "Mayank Kumar Chaudhari <https://mayank-chaudhari.vercel.app>",
+  "private": false,
+  "version": "0.1.5",
+  "description": "Unlock the Potential of React Server Components! Harness the power of an ESBuild plugin designed for crafting libraries compatible with RSC (React18 Server Components).",
+  "license": "MPL-2.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "repository": "github:react18-tools/esbuild-plugin-react18",
+  "bugs": "https://github.com/react18-tools/esbuild-plugin-react18/issues",
+  "homepage": "https://github.com/react18-tools/esbuild-plugin-react18/#readme",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf dist",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20.12.10",
+    "@vitest/coverage-v8": "^1.6.0",
+    "esbuild": "^0.21.1",
+    "esbuild-plugin-react18-css": "^0.0.4",
+    "tiny-glob": "^0.2.9",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.6.0"
+  },
+  "peerDependencies": {
+    "@types/react": "16.8 - 19",
+    "next": "10 - 14",
+    "react": "16.8 - 19"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    }
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/react18-tools"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/mayank1513"
+    }
+  ],
+  "keywords": [
+    "React Server Components",
+    "ESBuild",
+    "Plugin",
+    "Libraries",
+    "React18",
+    "Server-side rendering",
+    "Frontend development",
+    "Component architecture",
+    "use client",
+    "typescript",
+    "react18",
+    "react18-tools",
+    "use client",
+    "esbuild",
+    "esbuild-plugin",
+    "RSC compatible",
+    "esbuild-plugin-react18",
+    "esbuild-plugin-ignoretests",
+    "esbuild-plugin-ignore-test-files",
+    "esbuild-plugin-ignore-testfiles",
+    "esbuild-plugin-ignore",
+    "ignore",
+    "ignoretests",
+    "tsup",
+    "react-server-components",
+    "react-client-components",
+    "javascript",
+    "mayank1513",
+    "Next.js",
+    "Next.js 14",
+    "React server components",
+    "Customizable",
+    "Cutting-edge",
+    "Compatibility",
+    "Frontend development",
+    "UI components",
+    "Web development",
+    "Progressive",
+    "Modern",
+    "Seamless integration"
+  ]
+}
