@@ -1,7 +1,15 @@
 import type { BuildResult, OnLoadResult, Plugin, PluginBuild } from "esbuild";
 import fs from "node:fs";
 import path from "node:path";
-import { testPathRegExp, name, ignoreNamespace, keepNamespace } from "./constants";
+
+const uuid = () => (Date.now() * Math.random()).toString(36).slice(0, 8);
+
+/** regExp */
+const testPathRegExp = /.*\.(test|spec|check)\.(j|t)s(x)?$/i;
+
+const name = "esbuild-plugin-react18-" + uuid();
+const ignoreNamespace = "mayank1513-ignore-" + uuid();
+const keepNamespace = "mayank1513-keep-" + uuid();
 
 interface ignorePattern {
   pathPattern: RegExp;
