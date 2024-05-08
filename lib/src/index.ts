@@ -123,6 +123,12 @@ function replaceBuild(buildReplacePattern: ReplacePattern, result: BuildResult) 
     );
 }
 
+const useClientRegExp = /^(["']use strict["'];)?["']use client["'];?/i;
+const useServerRegExp = /^(["']use strict["'];)?["']use server["'];?/i;
+const jsxImportRegExp = /(var |,)?[a-zA-Z_$][\w$]*=require\("react\/jsx-runtime"\);?/g;
+const regExp2replace2GetVar0 = /(var |,)/;
+const regExp2replace2GetVar = /=require\(['"]react\/jsx-runtime['"]\);?/;
+
 function onEndCallBack(result: BuildResult, options: React18PluginOptions, write?: boolean) {
   /** remove empty file imports */
   const emptyChunkFiles = result.outputFiles
@@ -139,20 +145,33 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
     ?.filter(f => !f.path.endsWith(".map"))
     .forEach(f => {
       let txt = f.text;
-      txt = txt.replace(
-        /^(["']use strict["'];)?["']use client["'];?/i,
-        '"use client";\n"use strict";',
-      );
+      txt = txt.replace(useClientRegExp, '"use client";\n"use strict";');
 
       /** module level use server */
-      txt = txt.replace(
-        /^(["']use strict["'];)?["']use server["'];?/i,
-        '"use server";\n"use strict";',
-      );
+      txt = txt.replace(useServerRegExp, '"use server";\n"use strict";');
 
       /** remove empty file imports */
       txt = txt.replace(emptyChunkImportRegExp, "");
 
+      /** remove extra jsx-runtime imports */
+      if (f.path.endsWith(".js")) {
+        const jsxMatches = txt.match(jsxImportRegExp);
+        if (jsxMatches !== null && jsxMatches.length > 1) {
+          console.log("path ------>", f.path);
+          const importVarName = jsxMatches[0]
+            .replace(regExp2replace2GetVar, "")
+            .replace(regExp2replace2GetVar0, "");
+          console.log({ jsxMatches, importVarName });
+          for (let index = 1; index < jsxMatches.length; index++) {
+            txt = txt.replace(jsxMatches[index], "");
+            const v1 = jsxMatches[index]
+              .replace(regExp2replace2GetVar, "")
+              .replace(regExp2replace2GetVar0, "");
+            console.log({ v1, index });
+            txt = txt.replace(new RegExp(`\\b${v1}\\b`, "g"), importVarName);
+          }
+        }
+      }
       f.contents = new TextEncoder().encode(txt);
     });
 
