@@ -157,17 +157,14 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
       if (f.path.endsWith(".js")) {
         const jsxMatches = txt.match(jsxImportRegExp);
         if (jsxMatches !== null && jsxMatches.length > 1) {
-          console.log("path ------>", f.path);
           const importVarName = jsxMatches[0]
             .replace(regExp2replace2GetVar, "")
             .replace(regExp2replace2GetVar0, "");
-          console.log({ jsxMatches, importVarName });
           for (let index = 1; index < jsxMatches.length; index++) {
             txt = txt.replace(jsxMatches[index], "");
             const v1 = jsxMatches[index]
               .replace(regExp2replace2GetVar, "")
               .replace(regExp2replace2GetVar0, "");
-            console.log({ v1, index });
             txt = txt.replace(new RegExp(`\\b${v1}\\b`, "g"), importVarName);
           }
         }

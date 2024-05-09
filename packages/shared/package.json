@@ -37,6 +37,16 @@
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.6.0"
   },
+  "peerDependencies": {
+    "@types/react": "16.8 - 19",
+    "next": "10 - 14",
+    "react": "16.8 - 19"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    }
+  },
   "dependencies": {
     "@mayank1513/fork-me": "^2.1.2",
     "@repo/scripts": "workspace:*",
