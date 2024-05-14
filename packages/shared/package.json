@@ -22,8 +22,8 @@
     "@repo/jest-presets": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@testing-library/react": "^15.0.7",
-    "@types/node": "^20.12.11",
-    "@types/react": "^18.3.1",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/coverage-v8": "^1.6.0",
@@ -53,6 +53,6 @@
     "nextjs-themes": "^3.1.1",
     "r18gs": "^1.0.2",
     "react-live": "^4.1.6",
-    "react18-loaders": "^1.0.0"
+    "react18-loaders": "^1.0.1"
   }
 }

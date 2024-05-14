@@ -19,14 +19,14 @@
     "nextjs-themes": "^3.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react18-loaders": "^1.0.0"
+    "react18-loaders": "^1.0.1"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.2.3",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "^20.12.11",
-    "@types/react": "^18.3.1",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "typescript": "^5.4.5"
   }
