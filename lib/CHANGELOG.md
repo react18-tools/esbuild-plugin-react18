@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.2.0
+
+### Minor Changes
+
+- ecb89d5: Remove duplicate require("react/jsx-runtime")
+
 ## 0.2.0-beta.0
 
 ### Minor Changes
