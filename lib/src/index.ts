@@ -125,9 +125,9 @@ function replaceBuild(buildReplacePattern: ReplacePattern, result: BuildResult) 
 
 const useClientRegExp = /^(["']use strict["'];)?["']use client["'];?/i;
 const useServerRegExp = /^(["']use strict["'];)?["']use server["'];?/i;
-const jsxImportRegExp = /(var |,)?[a-zA-Z_$][\w$]*=require\("react\/jsx-runtime"\);?/g;
+const jsxImportRegExp = /(var |,)?[a-zA-Z_$][\w$]*=require\("react\/jsx-runtime"\)[;,]?/g;
 const regExp2replace2GetVar0 = /(var |,)/;
-const regExp2replace2GetVar = /[=]require\(['"]react\/jsx-runtime['"]\);?/;
+const regExp2replace2GetVar = /[=]require\(['"]react\/jsx-runtime['"]\)[;,]?/;
 
 function onEndCallBack(result: BuildResult, options: React18PluginOptions, write?: boolean) {
   /** remove empty file imports */
