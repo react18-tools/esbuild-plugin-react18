@@ -161,7 +161,9 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
             .replace(regExp2replace2GetVar, "")
             .replace(regExp2replace2GetVar0, "");
           for (let index = 1; index < jsxMatches.length; index++) {
-            txt = txt.replace(jsxMatches[index], "");
+            const token = jsxMatches[index];
+            const toReplace = token.match(/^,.*,$/) ? token.slice(1) : token;
+            txt = txt.replace(toReplace, "");
             const v1 = jsxMatches[index]
               .replace(regExp2replace2GetVar, "")
               .replace(regExp2replace2GetVar0, "");
