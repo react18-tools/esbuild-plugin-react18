@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.2.1
+
+### Patch Changes
+
+- Handle edgecase where jsx import ends with ',' in place of ';'
+
 ## 0.2.0
 
 ### Minor Changes
