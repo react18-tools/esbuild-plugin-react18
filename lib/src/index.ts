@@ -60,6 +60,11 @@ data-testid` attributes. If your
    * to avoid any unexpected results.
    */
   buildReplacePatterns?: ReplacePattern[];
+
+  /**
+   * In case you face any errors, or you want to speed up build a bit, try disabling deduplication of require("react/jsx-runtime")
+   */
+  disableJSXRequireDedup?: boolean;
 }
 
 function removeTests(build: PluginBuild, options: React18PluginOptions) {
@@ -154,7 +159,7 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
       txt = txt.replace(emptyChunkImportRegExp, "");
 
       /** remove extra jsx-runtime imports */
-      if (f.path.endsWith(".js")) {
+      if (!options.disableJSXRequireDedup && f.path.endsWith(".js")) {
         const jsxMatches = txt.match(jsxImportRegExp);
         if (jsxMatches !== null && jsxMatches.length > 1) {
           const importVarName = jsxMatches[0]
@@ -197,6 +202,8 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
 function setup(build: PluginBuild, options: React18PluginOptions = {}) {
   const write = build.initialOptions.write;
   build.initialOptions.write = false;
+  // Avoid addiitonal computation when in watch mode or minification is not required
+  if (!build.initialOptions.minify) options.disableJSXRequireDedup = true;
 
   if (!options.keepTests) removeTests(build, options);
 
