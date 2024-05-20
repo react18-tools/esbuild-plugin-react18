@@ -60,6 +60,11 @@ data-testid` attributes. If your
    * to avoid any unexpected results.
    */
   buildReplacePatterns?: ReplacePattern[];
+
+  /**
+   * In case you face any errors, or you want to speed up build a bit, try disabling deduplication of require("react/jsx-runtime")
+   */
+  disableJSXRequireDedup?: boolean;
 }
 
 function removeTests(build: PluginBuild, options: React18PluginOptions) {
@@ -125,7 +130,7 @@ function replaceBuild(buildReplacePattern: ReplacePattern, result: BuildResult) 
 
 const useClientRegExp = /^(["']use strict["'];)?["']use client["'];?/i;
 const useServerRegExp = /^(["']use strict["'];)?["']use server["'];?/i;
-const jsxImportRegExp = /(var |,)?[a-zA-Z_$][\w$]*=require\("react\/jsx-runtime"\)[;,]?/g;
+const jsxImportRegExp = /(var |,)[a-zA-Z_$][\w$]*=require\("react\/jsx-runtime"\)[;,]?/g;
 const regExp2replace2GetVar0 = /(var |,)/;
 const regExp2replace2GetVar = /[=]require\(['"]react\/jsx-runtime['"]\)[;,]?/;
 
@@ -154,16 +159,17 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
       txt = txt.replace(emptyChunkImportRegExp, "");
 
       /** remove extra jsx-runtime imports */
-      if (f.path.endsWith(".js")) {
+      if (!options.disableJSXRequireDedup && f.path.endsWith(".js")) {
         const jsxMatches = txt.match(jsxImportRegExp);
         if (jsxMatches !== null && jsxMatches.length > 1) {
           const importVarName = jsxMatches[0]
             .replace(regExp2replace2GetVar, "")
             .replace(regExp2replace2GetVar0, "");
           for (let index = 1; index < jsxMatches.length; index++) {
-            const token = jsxMatches[index];
-            const toReplace = /^,.*,$/.test(token) ? token.slice(1) : token;
-            txt = txt.replace(toReplace, "");
+            let token = jsxMatches[index];
+            if (/^,.*,$/.test(token)) token = token.slice(1);
+            else if (token.startsWith("var ") && token.endsWith(",")) token = token.slice(4);
+            txt = txt.replace(token, "");
             const v1 = jsxMatches[index]
               .replace(regExp2replace2GetVar, "")
               .replace(regExp2replace2GetVar0, "");
@@ -196,6 +202,8 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
 function setup(build: PluginBuild, options: React18PluginOptions = {}) {
   const write = build.initialOptions.write;
   build.initialOptions.write = false;
+  // Avoid addiitonal computation when in watch mode or minification is not required
+  if (!build.initialOptions.minify) options.disableJSXRequireDedup = true;
 
   if (!options.keepTests) removeTests(build, options);
 
