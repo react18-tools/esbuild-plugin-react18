@@ -11,7 +11,7 @@
     "typecheck": "turbo typecheck"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.2",
+    "@changesets/cli": "^2.27.3",
     "@repo/typescript-config": "workspace:*",
     "plop": "^4.0.1",
     "prettier": "^3.2.5",
