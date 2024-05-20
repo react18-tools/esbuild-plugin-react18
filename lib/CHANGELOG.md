@@ -1,5 +1,13 @@
 # esbuild-plugin-react18
 
+## 0.2.2-beta.0
+
+### Patch Changes
+
+- d08f4cf: Add option to disableJSXRequireDedup.
+
+  In case you face any errors, or you want to speed up build a bit, try disabling deduplication of require("react/jsx-runtime")
+
 ## 0.2.1
 
 ### Patch Changes
