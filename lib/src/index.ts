@@ -173,7 +173,7 @@ function onEndCallBack(result: BuildResult, options: React18PluginOptions, write
             const v1 = jsxMatches[index]
               .replace(regExp2replace2GetVar, "")
               .replace(regExp2replace2GetVar0, "");
-            txt = txt.replace(new RegExp(`\\b${v1}\\b`, "g"), importVarName);
+            txt = txt.replace(new RegExp(`(?<!--)\\b${v1}\\b`, "g"), importVarName);
           }
         }
       }
