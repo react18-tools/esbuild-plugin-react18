@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.2.3
+
+### Patch Changes
+
+- Use negative lookbehind to avoid renaming css variables
+
 ## 0.2.2
 
 ### Patch Changes
