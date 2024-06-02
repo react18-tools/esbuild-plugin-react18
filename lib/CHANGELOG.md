@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.2.4
+
+### Patch Changes
+
+- Do not remove ';' when require statement starts with ','.
+
 ## 0.2.3
 
 ### Patch Changes
