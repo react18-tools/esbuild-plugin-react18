@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm i -g pnpm@9.0.5 && pnpm i
+      - run: npm i -g pnpm && pnpm i
         name: Install dependencies
       - name: Run unit tests
         run: pnpm build --filter @repo/shared && pnpm test
