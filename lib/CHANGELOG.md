@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.2.5
+
+### Patch Changes
+
+- Do not build snap files.
+
 ## 0.2.4
 
 ### Patch Changes
