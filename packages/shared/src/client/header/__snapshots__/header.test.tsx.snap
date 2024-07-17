@@ -1,0 +1,54 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`header > snapshot 1`] = `
+<div>
+  <header
+    class="_header_66b73e"
+  >
+    <div>
+      <button
+        class="_drawerBtn_457bb3 mb "
+      >
+        <div />
+        <div />
+        <div />
+      </button>
+      <a
+        class="_logo_f9173e"
+        href="/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <span>
+          esbuild-plugin-react18
+        </span>
+      </a>
+      <nav
+        class=""
+      >
+        <a
+          class="_author_66b73e"
+          href="https://mayank-chaudhari.vercel.app/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          By Mayank Chaudhari
+        </a>
+        <button
+          class="_themeswitch_66b73e"
+        >
+          <button
+            class="nth-s nth-system "
+            style="--s: 25px;"
+          />
+          <span
+            class="mb"
+          >
+            system
+          </span>
+        </button>
+      </nav>
+    </div>
+  </header>
+</div>
+`;

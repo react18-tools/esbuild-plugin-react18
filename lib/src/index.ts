@@ -5,7 +5,7 @@ import path from "node:path";
 const uuid = () => (Date.now() * Math.random()).toString(36).slice(0, 8);
 
 /** regExp */
-const testPathRegExp = /.*\.(test|spec|check)\.(j|t)s(x)?$/i;
+const testPathRegExp = /.*\.(test|spec|check)\.[jt]sx?|spec$/i;
 
 const name = "esbuild-plugin-react18-" + uuid();
 const ignoreNamespace = "mayank1513-ignore-" + uuid();
@@ -46,7 +46,7 @@ export interface React18PluginOptions {
    * to avoid any unexpected results.
    *
    * Caution! - if you have not enabled `keepTests`, we are already using
-   * `/.*\.(j|t)s(x)?$/` pattern to remove `
+   * `/.*\.[jt]sx?$/` pattern to remove `
 
 data-testid` attributes. If your
    * `sourceReplacePatterns` collide with these files, please set `keepTestIds`
@@ -76,7 +76,7 @@ function removeTests(build: PluginBuild, options: React18PluginOptions) {
     /** remove data-testid */
     if (!options.sourceReplacePatterns) options.sourceReplacePatterns = [];
     options.sourceReplacePatterns.push({
-      pathPattern: /.*\.(j|t)s(x)?$/,
+      pathPattern: /.*\.[jt]sx?$/,
       replaceParams: [{ pattern: /\s*data-testid="[^"]*"/gm, substitute: " " }],
     });
   }

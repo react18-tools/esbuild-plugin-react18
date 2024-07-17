@@ -23,4 +23,10 @@ describe.concurrent("Test plugin with default options in example build with tsup
     const text = fs.readFileSync(path.resolve(exampleBuildDir, "client", "index.js"), "utf-8");
     expect(/data-testid/.test(text)).toBe(false);
   });
+
+  test("should not contain .snap files", ({ expect }) => {
+    expect(fs.existsSync(path.resolve(exampleBuildDir, "client", "header", "__snapshots__"))).toBe(
+      false,
+    );
+  });
 });
