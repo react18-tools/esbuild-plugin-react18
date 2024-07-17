@@ -24,7 +24,9 @@ describe.concurrent("Test plugin with default options in example build with tsup
     expect(/data-testid/.test(text)).toBe(false);
   });
 
-  test('should not contain .snap files', ({expect}) => {
-    expect(fs.existsSync(path.resolve(exampleBuildDir, "client", "header", '__snapshots__'))).toBe(false);
-  })
+  test("should not contain .snap files", ({ expect }) => {
+    expect(fs.existsSync(path.resolve(exampleBuildDir, "client", "header", "__snapshots__"))).toBe(
+      false,
+    );
+  });
 });

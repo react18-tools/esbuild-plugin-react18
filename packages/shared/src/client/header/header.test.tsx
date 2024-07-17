@@ -8,8 +8,8 @@ describe.concurrent("header", () => {
   test("check if h1 heading exists", () => {
     render(<Header />);
   });
-  test("snapshot", ({expect}) => {
+  test("snapshot", ({ expect }) => {
     const { container } = render(<Header />);
     expect(container).toMatchSnapshot();
-  })
+  });
 });
