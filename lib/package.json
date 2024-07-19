@@ -31,7 +31,7 @@
     "esbuild": "^0.23.0",
     "esbuild-plugin-react18-css": "^0.0.4",
     "tiny-glob": "^0.2.9",
-    "tsup": "^8.1.2",
+    "tsup": "^8.2.0",
     "typescript": "^5.5.3",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^2.0.3"
