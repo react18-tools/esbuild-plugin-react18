@@ -2523,8 +2523,8 @@ packages:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
 
-  core-js-compat@3.37.1:
-    resolution: {integrity: sha512-9TNiImhKvQqSUkOvk/mMRZzOANTiEVC7WaBNhHcKM7x+/5E1l5NvsysR19zuDQScE8k+kfQXWRN3AtS/eOSHpg==}
+  core-js-compat@3.38.0:
+    resolution: {integrity: sha512-75LAicdLa4OJVwFxFbQR3NdnZjNgX6ILpVcVzcC4T2smerB5lELMrJQQQoWV6TiuC/vlaFqgU2tKQx9w5s0e0A==}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -9221,7 +9221,7 @@ snapshots:
 
   cookie@0.6.0: {}
 
-  core-js-compat@3.37.1:
+  core-js-compat@3.38.0:
     dependencies:
       browserslist: 4.23.3
 
@@ -9930,7 +9930,7 @@ snapshots:
       '@eslint/eslintrc': 2.1.4
       ci-info: 4.0.0
       clean-regexp: 1.0.0
-      core-js-compat: 3.37.1
+      core-js-compat: 3.38.0
       eslint: 9.8.0
       esquery: 1.6.0
       indent-string: 4.0.0
