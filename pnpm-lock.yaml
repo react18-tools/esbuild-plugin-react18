@@ -3243,8 +3243,8 @@ packages:
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
 
-  eslint-plugin-react@7.37.0:
-    resolution: {integrity: sha512-IHBePmfWH5lKhJnJ7WB1V+v/GolbB0rjS8XYVCSQCZKaQCAUhMoVoOEn1Ef8Z8Wf0a7l8KTJvuZg5/e4qrZ6nA==}
+  eslint-plugin-react@7.37.1:
+    resolution: {integrity: sha512-xwTnwDqzbDRA8uJ7BMxPs/EXRB3i8ZfnOIp8BsxEQkT0nHPp+WWceqGgo6rKb9ctNi8GJLDT4Go5HAWELa/WMg==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
@@ -6216,8 +6216,8 @@ packages:
   tinyexec@0.3.0:
     resolution: {integrity: sha512-tVGE0mVJPGb0chKhqmsoosjsS+qUnJVGJpZgsHYQcGoPlG3B51R3PouqTgEGH2Dc9jjFyOqOpix6ZHNMXp1FZg==}
 
-  tinyglobby@0.2.8:
-    resolution: {integrity: sha512-AMLZywN0vbhiZi2neFEaj9VIIxC+PjDMsp0nAK6tpR86LJavZgHqGz0S/FOONwBygC+mu7R0/TyAQw0gx0Mu9Q==}
+  tinyglobby@0.2.9:
+    resolution: {integrity: sha512-8or1+BGEdk1Zkkw2ii16qSS7uVrQJPre5A9o/XkWPATkk23FZh/15BKFxPnlTy6vkljZxLqYCzzBMj30ZrSvjw==}
     engines: {node: '>=12.0.0'}
 
   tinypool@1.0.1:
@@ -8904,7 +8904,7 @@ snapshots:
       eslint-plugin-jest: 27.9.0(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@9.11.1)(typescript@5.6.2))(eslint@9.11.1)(typescript@5.6.2))(eslint@9.11.1)(jest@29.7.0(@types/node@22.7.4)(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)))(typescript@5.6.2)
       eslint-plugin-jsx-a11y: 6.10.0(eslint@9.11.1)
       eslint-plugin-playwright: 1.6.2(eslint-plugin-jest@27.9.0(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@9.11.1)(typescript@5.6.2))(eslint@9.11.1)(typescript@5.6.2))(eslint@9.11.1)(jest@29.7.0(@types/node@22.7.4)(ts-node@10.9.2(@types/node@22.7.4)(typescript@5.6.2)))(typescript@5.6.2))(eslint@9.11.1)
-      eslint-plugin-react: 7.37.0(eslint@9.11.1)
+      eslint-plugin-react: 7.37.1(eslint@9.11.1)
       eslint-plugin-react-hooks: 4.6.2(eslint@9.11.1)
       eslint-plugin-testing-library: 6.3.0(eslint@9.11.1)(typescript@5.6.2)
       eslint-plugin-tsdoc: 0.2.17
@@ -10276,7 +10276,7 @@ snapshots:
     dependencies:
       eslint: 9.11.1
 
-  eslint-plugin-react@7.37.0(eslint@9.11.1):
+  eslint-plugin-react@7.37.1(eslint@9.11.1):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlast: 1.2.5
@@ -14134,7 +14134,7 @@ snapshots:
 
   tinyexec@0.3.0: {}
 
-  tinyglobby@0.2.8:
+  tinyglobby@0.2.9:
     dependencies:
       fdir: 6.4.0(picomatch@4.0.2)
       picomatch: 4.0.2
@@ -14283,7 +14283,7 @@ snapshots:
       rollup: 4.23.0
       source-map: 0.8.0-beta.0
       sucrase: 3.35.0
-      tinyglobby: 0.2.8
+      tinyglobby: 0.2.9
       tree-kill: 1.2.2
     optionalDependencies:
       postcss: 8.4.47
