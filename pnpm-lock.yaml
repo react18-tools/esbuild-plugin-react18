@@ -5893,8 +5893,8 @@ packages:
   remark-mdx@2.3.0:
     resolution: {integrity: sha512-g53hMkpM0I98MU266IzDFMrTD980gNF3BJnkyFcmN+dD873mQeD5rdMO3Y2X+x8umQfbSE0PcoEDl7ledSA+2g==}
 
-  remark-mdx@3.0.1:
-    resolution: {integrity: sha512-3Pz3yPQ5Rht2pM5R+0J2MrGoBSrzf+tJG94N+t/ilfdh8YLyyKYtidAYwTveB20BoHAcwIopOUqhcmh2F7hGYA==}
+  remark-mdx@3.1.0:
+    resolution: {integrity: sha512-Ngl/H3YXyBV9RcRNdlYsZujAmhsxwzxpDzpDEhFBVAGthS4GDgnctpDjgFl/ULx5UEDzqtW1cyBSNKqYYrqLBA==}
 
   remark-parse@10.0.2:
     resolution: {integrity: sha512-3ydxgHa/ZQzG8LvC7jTXccARYDcRld3VfcgIIFs7bI6vbRSxJJmzgLEIIoYKyrfhaY+ujuWaf/PJiMZXoiCXgw==}
@@ -10515,7 +10515,7 @@ snapshots:
       eslint: 9.12.0
       espree: 9.6.1
       estree-util-visit: 2.0.0
-      remark-mdx: 3.0.1
+      remark-mdx: 3.1.0
       remark-parse: 11.0.0
       remark-stringify: 11.0.0
       synckit: 0.9.2
@@ -10618,7 +10618,7 @@ snapshots:
       eslint: 9.12.0
       eslint-mdx: 3.1.5(eslint@9.12.0)
       eslint-plugin-markdown: 3.0.1(eslint@9.12.0)
-      remark-mdx: 3.0.1
+      remark-mdx: 3.1.0
       remark-parse: 11.0.0
       remark-stringify: 11.0.0
       tslib: 2.8.0
@@ -13925,7 +13925,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  remark-mdx@3.0.1:
+  remark-mdx@3.1.0:
     dependencies:
       mdast-util-mdx: 3.0.0
       micromark-extension-mdxjs: 3.0.0
