@@ -28,26 +28,26 @@ importers:
         specifier: ^2.2.3
         version: 2.2.3
       typedoc:
-        specifier: ^0.26.10
-        version: 0.26.10(typescript@5.6.3)
+        specifier: ^0.26.11
+        version: 0.26.11(typescript@5.6.3)
       typedoc-plugin-extras:
         specifier: ^3.1.0
-        version: 3.1.0(typedoc@0.26.10(typescript@5.6.3))
+        version: 3.1.0(typedoc@0.26.11(typescript@5.6.3))
       typedoc-plugin-inline-sources:
         specifier: ^1.1.0
-        version: 1.1.0(typedoc@0.26.10(typescript@5.6.3))
+        version: 1.1.0(typedoc@0.26.11(typescript@5.6.3))
       typedoc-plugin-mdn-links:
         specifier: ^3.3.5
-        version: 3.3.5(typedoc@0.26.10(typescript@5.6.3))
+        version: 3.3.5(typedoc@0.26.11(typescript@5.6.3))
       typedoc-plugin-missing-exports:
         specifier: ^3.0.0
-        version: 3.0.0(typedoc@0.26.10(typescript@5.6.3))
+        version: 3.0.0(typedoc@0.26.11(typescript@5.6.3))
       typedoc-plugin-rename-defaults:
         specifier: ^0.7.1
-        version: 0.7.1(typedoc@0.26.10(typescript@5.6.3))
+        version: 0.7.1(typedoc@0.26.11(typescript@5.6.3))
       typedoc-plugin-zod:
         specifier: ^1.2.1
-        version: 1.2.1(typedoc@0.26.10(typescript@5.6.3))
+        version: 1.2.1(typedoc@0.26.11(typescript@5.6.3))
 
   examples/nextjs:
     dependencies:
@@ -260,8 +260,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       eslint-plugin-storybook:
-        specifier: ^0.10.1
-        version: 0.10.1(eslint@9.12.0)(typescript@5.6.3)
+        specifier: ^0.10.2
+        version: 0.10.2(eslint@9.12.0)(typescript@5.6.3)
 
   packages/config-typescript: {}
 
@@ -3459,8 +3459,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-storybook@0.10.1:
-    resolution: {integrity: sha512-YpxkdqyiKpMIrRquuvBaCinsqmZJ86JvXRX/gtRa4Qctpk0ipFt2cWqEjkB1HHWWG0DVRXlUBKHjRogC2Ig1fg==}
+  eslint-plugin-storybook@0.10.2:
+    resolution: {integrity: sha512-iOrFJfyLgRLIbWDLbbs3J4yrknvIB+uiZ8KGqGOEXTL7/BGuBMZLiIU9Q4Pm/VYJrHN4JqmMtwCSrAemHL2nFg==}
     engines: {node: '>= 18'}
     peerDependencies:
       eslint: '>=6'
@@ -6770,8 +6770,8 @@ packages:
     peerDependencies:
       typedoc: 0.23.x || 0.24.x || 0.25.x || 0.26.x
 
-  typedoc@0.26.10:
-    resolution: {integrity: sha512-xLmVKJ8S21t+JeuQLNueebEuTVphx6IrP06CdV7+0WVflUSW3SPmR+h1fnWVdAR/FQePEgsSWCUHXqKKjzuUAw==}
+  typedoc@0.26.11:
+    resolution: {integrity: sha512-sFEgRRtrcDl2FxVP58Ze++ZK2UQAEvtvvH8rRlig1Ja3o7dDaMHmaBfvJmdGnNEFaLTpQsN8dpvZaTqJSu/Ugw==}
     engines: {node: '>= 18'}
     hasBin: true
     peerDependencies:
@@ -10783,7 +10783,7 @@ snapshots:
       string.prototype.matchall: 4.0.11
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-storybook@0.10.1(eslint@9.12.0)(typescript@5.6.3):
+  eslint-plugin-storybook@0.10.2(eslint@9.12.0)(typescript@5.6.3):
     dependencies:
       '@storybook/csf': 0.1.11
       '@typescript-eslint/utils': 8.12.2(eslint@9.12.0)(typescript@5.6.3)
@@ -15002,32 +15002,32 @@ snapshots:
 
   typedarray@0.0.6: {}
 
-  typedoc-plugin-extras@3.1.0(typedoc@0.26.10(typescript@5.6.3)):
+  typedoc-plugin-extras@3.1.0(typedoc@0.26.11(typescript@5.6.3)):
     dependencies:
-      typedoc: 0.26.10(typescript@5.6.3)
+      typedoc: 0.26.11(typescript@5.6.3)
 
-  typedoc-plugin-inline-sources@1.1.0(typedoc@0.26.10(typescript@5.6.3)):
+  typedoc-plugin-inline-sources@1.1.0(typedoc@0.26.11(typescript@5.6.3)):
     dependencies:
-      typedoc: 0.26.10(typescript@5.6.3)
+      typedoc: 0.26.11(typescript@5.6.3)
 
-  typedoc-plugin-mdn-links@3.3.5(typedoc@0.26.10(typescript@5.6.3)):
+  typedoc-plugin-mdn-links@3.3.5(typedoc@0.26.11(typescript@5.6.3)):
     dependencies:
-      typedoc: 0.26.10(typescript@5.6.3)
+      typedoc: 0.26.11(typescript@5.6.3)
 
-  typedoc-plugin-missing-exports@3.0.0(typedoc@0.26.10(typescript@5.6.3)):
+  typedoc-plugin-missing-exports@3.0.0(typedoc@0.26.11(typescript@5.6.3)):
     dependencies:
-      typedoc: 0.26.10(typescript@5.6.3)
+      typedoc: 0.26.11(typescript@5.6.3)
 
-  typedoc-plugin-rename-defaults@0.7.1(typedoc@0.26.10(typescript@5.6.3)):
+  typedoc-plugin-rename-defaults@0.7.1(typedoc@0.26.11(typescript@5.6.3)):
     dependencies:
       camelcase: 8.0.0
-      typedoc: 0.26.10(typescript@5.6.3)
+      typedoc: 0.26.11(typescript@5.6.3)
 
-  typedoc-plugin-zod@1.2.1(typedoc@0.26.10(typescript@5.6.3)):
+  typedoc-plugin-zod@1.2.1(typedoc@0.26.11(typescript@5.6.3)):
     dependencies:
-      typedoc: 0.26.10(typescript@5.6.3)
+      typedoc: 0.26.11(typescript@5.6.3)
 
-  typedoc@0.26.10(typescript@5.6.3):
+  typedoc@0.26.11(typescript@5.6.3):
     dependencies:
       lunr: 2.3.9
       markdown-it: 14.1.0
