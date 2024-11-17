@@ -1370,8 +1370,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@jspm/core@2.1.0':
-    resolution: {integrity: sha512-3sRl+pkyFY/kLmHl0cgHiFp2xEqErA8N3ECjMs7serSUBmoJ70lBa0PG5t0IM6WJgdZNyyI0R8YFfi5wM8+mzg==}
+  '@jspm/core@2.0.1':
+    resolution: {integrity: sha512-Lg3PnLp0QXpxwLIAuuJboLeRaIhrgJjeuh797QADg3xz8wGLugQOS5DpsE8A6i6Adgzf+bacllkKZG3J0tGfDw==}
 
   '@manypkg/find-root@1.1.0':
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
@@ -3216,11 +3216,11 @@ packages:
   esbuild-plugin-react18-css@0.0.4:
     resolution: {integrity: sha512-dg/6DB8c0ODubeahYa/4rWO5lk/Bn22lRD6n3+1ZFOvNU4d+Q/gGMiRq01ndrX7p70QYEnrjYmV8p59zrjTtIg==}
 
-  esbuild-plugins-node-modules-polyfill@1.6.7:
-    resolution: {integrity: sha512-1lzsVFT/6OO1ZATHKZqSP+qYzyFo2d+QF9QzMKsyJR7GMRScYizYb1uEEE4NxTsBSxWviY3xnmN9dEOTaKFbJA==}
+  esbuild-plugins-node-modules-polyfill@1.6.8:
+    resolution: {integrity: sha512-bRB4qbgUDWrdY1eMk123KiaCSW9VzQ+QLZrmU7D//cCFkmksPd9mUMpmWoFK/rxjIeTfTSOpKCoGoimlvI+AWw==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      esbuild: '>=0.14.0 <=0.23.x'
+      esbuild: '>=0.14.0 <=0.24.x'
 
   esbuild@0.17.6:
     resolution: {integrity: sha512-TKFRp9TxrJDdRWfSsSERKEovm6v30iHnrjlcGhLBOtReE28Yp1VSBRfO3GTaOFMoxsNerx4TjrhzSuma9ha83Q==}
@@ -8193,7 +8193,7 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
     optional: true
 
-  '@jspm/core@2.1.0': {}
+  '@jspm/core@2.0.1': {}
 
   '@manypkg/find-root@1.1.0':
     dependencies:
@@ -8537,7 +8537,7 @@ snapshots:
       dotenv: 16.4.5
       es-module-lexer: 1.5.4
       esbuild: 0.17.6
-      esbuild-plugins-node-modules-polyfill: 1.6.7(esbuild@0.17.6)
+      esbuild-plugins-node-modules-polyfill: 1.6.8(esbuild@0.17.6)
       execa: 5.1.1
       exit-hook: 2.2.1
       express: 4.21.1
@@ -10283,9 +10283,9 @@ snapshots:
       postcss-modules: 6.0.1(postcss@8.4.49)
       sass: 1.81.0
 
-  esbuild-plugins-node-modules-polyfill@1.6.7(esbuild@0.17.6):
+  esbuild-plugins-node-modules-polyfill@1.6.8(esbuild@0.17.6):
     dependencies:
-      '@jspm/core': 2.1.0
+      '@jspm/core': 2.0.1
       esbuild: 0.17.6
       local-pkg: 0.5.0
       resolve.exports: 2.0.2
