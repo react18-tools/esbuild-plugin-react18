@@ -16,7 +16,7 @@
     "@repo/typescript-config": "workspace:*",
     "plop": "^4.0.1",
     "prettier": "^3.3.3",
-    "turbo": "^2.3.1",
+    "turbo": "^2.3.2",
     "typedoc": "^0.26.11",
     "typedoc-plugin-extras": "^3.1.0",
     "typedoc-plugin-inline-sources": "^1.1.0",
@@ -30,7 +30,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@types/node": "^22.9.3"
+    "@types/node": "^22.9.4"
   },
   "name": "esbuild-plugin-react18"
 }
