@@ -20,7 +20,7 @@ jobs:
         with:
           registry-url: https://registry.npmjs.org
           node-version: 20
-      - run: npm i -g pnpm
+      - run: npm i -g pnpm && pnpm i
         name: Install dependencies
       - run: npx @turbo/codemod update . && pnpm update --latest -r
         name: Update dependencies
