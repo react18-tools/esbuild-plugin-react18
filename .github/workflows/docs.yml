@@ -22,6 +22,8 @@ jobs:
           node-version: 20
       - run: npm i -g pnpm && pnpm i
         name: Install dependencies
+      - run: git stash --include-untracked
+        name: clean up working directory
       - run: npx @turbo/codemod update . && pnpm update --latest -r
         name: Update dependencies
       - run: pnpm build
