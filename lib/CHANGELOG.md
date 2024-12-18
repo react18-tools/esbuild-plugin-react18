@@ -1,5 +1,11 @@
 # esbuild-plugin-react18
 
+## 0.2.6
+
+### Patch Changes
+
+- 96c9c38: Remove peer dependencies as not needed.
+
 ## 0.2.5
 
 ### Patch Changes
