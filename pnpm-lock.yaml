@@ -2770,6 +2770,9 @@ packages:
   confbox@0.1.8:
     resolution: {integrity: sha512-RMtmw0iFkeR4YV+fUOSucriAQNb9g8zFR52MWCtl+cCZOFRNL6zeB395vPzFhEjjn4fMxXudmELnl/KF/WrK6w==}
 
+  confbox@0.2.1:
+    resolution: {integrity: sha512-hkT3yDPFbs95mNCy1+7qNKC6Pro+/ibzYxtM2iqEigpf0sVw+bg4Zh9/snjsBcf990vfIsg5+1U7VyiyBb3etg==}
+
   consola@3.4.0:
     resolution: {integrity: sha512-EiPU8G6dQG0GFHNR8ljnZFki/8a+cQwEQ+7wpxdChl02Q8HXlwEZWD5lqAF8vC2sEC3Tehr8hy7vErz88LHyUA==}
     engines: {node: ^14.18.0 || >=16.10.0}
@@ -3491,6 +3494,9 @@ packages:
   express@4.21.2:
     resolution: {integrity: sha512-28HqgMZAmih1Czt9ny7qr6ek2qddF4FclbMzwhCREB6OFfH+rXAnuNCwo1/wFvrtbgsQDb4kSbX9de9lFbrXnA==}
     engines: {node: '>= 0.10.0'}
+
+  exsolve@1.0.1:
+    resolution: {integrity: sha512-Smf0iQtkQVJLaph8r/qS8C8SWfQkaq9Q/dFcD44MLbJj6DNhlWefVuaS21SjfqOsBbjVlKtbCj6L9ekXK6EZUg==}
 
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
@@ -4543,8 +4549,8 @@ packages:
     resolution: {integrity: sha512-FMJTLMXfCLMLfJxcX9PFqX5qD88Z5MRGaZCVzfuqeZSPsyiBzs+pahDQjbIWz2QIzPZz0NX9Zy4FX3lmK6YHIg==}
     engines: {node: '>= 12.13.0'}
 
-  local-pkg@1.1.0:
-    resolution: {integrity: sha512-xbZBuX6gYIWrlLmZG43aAVer4ocntYO09vPy9lxd6Ns8DnR4U7N+IIeDkubinqFOHHzoMlPxTxwo0jhE7oYjAw==}
+  local-pkg@1.1.1:
+    resolution: {integrity: sha512-WunYko2W1NcdfAFpuLUoucsgULmgDBRkdxHxWQ7mK0cQqwPiy8E1enjuRBrhLtZkB5iScJ1XIPdhVEFK8aOLSg==}
     engines: {node: '>=14'}
 
   locate-path@5.0.0:
@@ -5152,8 +5158,8 @@ packages:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
     engines: {node: '>=8'}
 
-  nwsapi@2.2.16:
-    resolution: {integrity: sha512-F1I/bimDpj3ncaNDhfyMWuFqmQDBwDB0Fogc2qpL3BWvkQteFD/8BzWuIRl83rq0DXfm8SGt/HFhLXZyljTXcQ==}
+  nwsapi@2.2.18:
+    resolution: {integrity: sha512-p1TRH/edngVEHVbwqWnxUViEmq5znDvyB+Sik5cmuLpGOIfDf/39zLiq3swPF8Vakqn+gvNiOQAZu8djYlQILA==}
 
   object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
@@ -5419,6 +5425,9 @@ packages:
 
   pkg-types@1.3.1:
     resolution: {integrity: sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ==}
+
+  pkg-types@2.1.0:
+    resolution: {integrity: sha512-wmJwA+8ihJixSoHKxZJRBQG1oY8Yr9pGLzRmSsNms0iNWyHHAlZCa7mmKiFR10YPZuz/2k169JiS/inOjBCZ2A==}
 
   plop@4.0.1:
     resolution: {integrity: sha512-5n8QU93kvL/ObOzBcPAB1siVFtAH1TZM6TntJ3JK5kXT0jIgnQV+j+uaOWWFJlg1cNkzLYm8klgASF65K36q9w==}
@@ -6090,8 +6099,8 @@ packages:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
 
-  std-env@3.8.0:
-    resolution: {integrity: sha512-Bc3YwwCB+OzldMxOXJIIvC6cPRWr/LxOp48CdQTOkPyk/t4JWWJbrilwBd7RJzKV8QW7tJkcgAmeuLLJugl5/w==}
+  std-env@3.8.1:
+    resolution: {integrity: sha512-vj5lIj3Mwf9D79hBkltk5qmkFI+biIKWS2IBxEyEU3AX1tUf7AoL8nSazCOiiqQsGKIq01SClsKEzweu34uwvA==}
 
   stdin-discarder@0.2.2:
     resolution: {integrity: sha512-UhDfHmA92YAlNnCfhmq0VeNL5bDbiZGg7sZ2IvPsXubGkiNa9EC+tUTsjBRsYUAz87btI6/1wf4XoVvQ3uRnmQ==}
@@ -9172,7 +9181,7 @@ snapshots:
       istanbul-reports: 3.1.7
       magic-string: 0.30.17
       magicast: 0.3.5
-      std-env: 3.8.0
+      std-env: 3.8.1
       test-exclude: 7.0.1
       tinyrainbow: 2.0.0
       vitest: 3.0.7(@types/debug@4.1.12)(@types/node@22.13.8)(jsdom@26.0.0)(sass@1.85.1)(yaml@2.7.0)
@@ -9791,6 +9800,8 @@ snapshots:
 
   confbox@0.1.8: {}
 
+  confbox@0.2.1: {}
+
   consola@3.4.0: {}
 
   constant-case@3.0.4:
@@ -10180,7 +10191,7 @@ snapshots:
     dependencies:
       '@jspm/core': 2.1.0
       esbuild: 0.17.6
-      local-pkg: 1.1.0
+      local-pkg: 1.1.1
       resolve.exports: 2.0.3
 
   esbuild@0.17.6:
@@ -10733,6 +10744,8 @@ snapshots:
       vary: 1.1.2
     transitivePeerDependencies:
       - supports-color
+
+  exsolve@1.0.1: {}
 
   extend@3.0.2: {}
 
@@ -11918,7 +11931,7 @@ snapshots:
       http-proxy-agent: 5.0.0
       https-proxy-agent: 5.0.1
       is-potential-custom-element-name: 1.0.1
-      nwsapi: 2.2.16
+      nwsapi: 2.2.18
       parse5: 7.2.1
       saxes: 6.0.0
       symbol-tree: 3.2.4
@@ -11945,7 +11958,7 @@ snapshots:
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
       is-potential-custom-element-name: 1.0.1
-      nwsapi: 2.2.16
+      nwsapi: 2.2.18
       parse5: 7.2.1
       rrweb-cssom: 0.8.0
       saxes: 6.0.0
@@ -12057,10 +12070,10 @@ snapshots:
 
   loader-utils@3.3.1: {}
 
-  local-pkg@1.1.0:
+  local-pkg@1.1.1:
     dependencies:
       mlly: 1.7.4
-      pkg-types: 1.3.1
+      pkg-types: 2.1.0
       quansync: 0.2.8
 
   locate-path@5.0.0:
@@ -13049,7 +13062,7 @@ snapshots:
     dependencies:
       path-key: 3.1.1
 
-  nwsapi@2.2.16: {}
+  nwsapi@2.2.18: {}
 
   object-assign@4.1.1: {}
 
@@ -13345,6 +13358,12 @@ snapshots:
     dependencies:
       confbox: 0.1.8
       mlly: 1.7.4
+      pathe: 2.0.3
+
+  pkg-types@2.1.0:
+    dependencies:
+      confbox: 0.2.1
+      exsolve: 1.0.1
       pathe: 2.0.3
 
   plop@4.0.1:
@@ -14115,7 +14134,7 @@ snapshots:
 
   statuses@2.0.1: {}
 
-  std-env@3.8.0: {}
+  std-env@3.8.1: {}
 
   stdin-discarder@0.2.2: {}
 
@@ -15000,7 +15019,7 @@ snapshots:
       expect-type: 1.2.0
       magic-string: 0.30.17
       pathe: 2.0.3
-      std-env: 3.8.0
+      std-env: 3.8.1
       tinybench: 2.9.0
       tinyexec: 0.3.2
       tinypool: 1.0.2
