@@ -250,8 +250,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       eslint-plugin-storybook:
-        specifier: ^0.11.3
-        version: 0.11.3(eslint@9.12.0)(typescript@5.8.2)
+        specifier: ^0.11.4
+        version: 0.11.4(eslint@9.12.0)(typescript@5.8.2)
 
   packages/config-typescript: {}
 
@@ -3320,8 +3320,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-storybook@0.11.3:
-    resolution: {integrity: sha512-gDBnBZiyk4ZG7OMSJRaHBcuJ8TMCXgMIQ3HB/XvtN0SvSio2ZOIeYD3yGj39g/DbyCe/Bg02j/ip9tWlDEs82A==}
+  eslint-plugin-storybook@0.11.4:
+    resolution: {integrity: sha512-OvLf1ljpDQ6Y/U2kM7hT5hESn+hg0vq/nh62+YiPFWdRIEjuQM9ivmwoTP9nRBExH8fT2VPqM5t/RB68lqTWJw==}
     engines: {node: '>= 18'}
     peerDependencies:
       eslint: '>=8'
@@ -10484,7 +10484,7 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-storybook@0.11.3(eslint@9.12.0)(typescript@5.8.2):
+  eslint-plugin-storybook@0.11.4(eslint@9.12.0)(typescript@5.8.2):
     dependencies:
       '@storybook/csf': 0.1.13
       '@typescript-eslint/utils': 8.26.0(eslint@9.12.0)(typescript@5.8.2)
