@@ -1135,8 +1135,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@eslint-community/eslint-utils@4.5.0':
-    resolution: {integrity: sha512-RoV8Xs9eNwiDvhv7M+xcL4PWyRyIXRY/FLp3buU4h1EYfdF7unWUy3dOjPqb3C7rMUewIcqwW850PgS8h1o1yg==}
+  '@eslint-community/eslint-utils@4.5.1':
+    resolution: {integrity: sha512-soEIOALTfTK6EjmKMMoLugwaP0rzkad90iIWd1hMO9ARkSAyjfMfkRRhLvD5qH7vvM0Cg72pieUfR6yh6XxC4w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
@@ -6587,8 +6587,8 @@ packages:
   undici-types@6.20.0:
     resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
-  undici@6.21.1:
-    resolution: {integrity: sha512-q/1rj5D0/zayJB2FraXdaWxbhWiNKDvu8naDT2dl1yTlvJp4BLtOcp2a5BvgGNQpYYJzau7tf1WgKv3b+7mqpQ==}
+  undici@6.21.2:
+    resolution: {integrity: sha512-uROZWze0R0itiAKVPsYhFov9LxrPMHLMEQFszeI2gCN6bnIIZ8twzBCJcN2LJrBBLfrP0t1FW0g+JmKVl8Vk1g==}
     engines: {node: '>=18.17'}
 
   unified-engine@11.2.2:
@@ -7767,7 +7767,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.1':
     optional: true
 
-  '@eslint-community/eslint-utils@4.5.0(eslint@9.12.0)':
+  '@eslint-community/eslint-utils@4.5.1(eslint@9.12.0)':
     dependencies:
       eslint: 9.12.0
       eslint-visitor-keys: 3.4.3
@@ -8492,7 +8492,7 @@ snapshots:
       cookie-signature: 1.2.2
       source-map-support: 0.5.21
       stream-slice: 0.1.2
-      undici: 6.21.1
+      undici: 6.21.2
     optionalDependencies:
       typescript: 5.8.2
 
@@ -8968,7 +8968,7 @@ snapshots:
 
   '@typescript-eslint/utils@5.62.0(eslint@9.12.0)(typescript@5.8.2)':
     dependencies:
-      '@eslint-community/eslint-utils': 4.5.0(eslint@9.12.0)
+      '@eslint-community/eslint-utils': 4.5.1(eslint@9.12.0)
       '@types/json-schema': 7.0.15
       '@types/semver': 7.5.8
       '@typescript-eslint/scope-manager': 5.62.0
@@ -8983,7 +8983,7 @@ snapshots:
 
   '@typescript-eslint/utils@7.18.0(eslint@9.12.0)(typescript@5.8.2)':
     dependencies:
-      '@eslint-community/eslint-utils': 4.5.0(eslint@9.12.0)
+      '@eslint-community/eslint-utils': 4.5.1(eslint@9.12.0)
       '@typescript-eslint/scope-manager': 7.18.0
       '@typescript-eslint/types': 7.18.0
       '@typescript-eslint/typescript-estree': 7.18.0(typescript@5.8.2)
@@ -8994,7 +8994,7 @@ snapshots:
 
   '@typescript-eslint/utils@8.26.1(eslint@9.12.0)(typescript@5.8.2)':
     dependencies:
-      '@eslint-community/eslint-utils': 4.5.0(eslint@9.12.0)
+      '@eslint-community/eslint-utils': 4.5.1(eslint@9.12.0)
       '@typescript-eslint/scope-manager': 8.26.1
       '@typescript-eslint/types': 8.26.1
       '@typescript-eslint/typescript-estree': 8.26.1(typescript@5.8.2)
@@ -10462,7 +10462,7 @@ snapshots:
   eslint-plugin-unicorn@51.0.1(eslint@9.12.0):
     dependencies:
       '@babel/helper-validator-identifier': 7.25.9
-      '@eslint-community/eslint-utils': 4.5.0(eslint@9.12.0)
+      '@eslint-community/eslint-utils': 4.5.1(eslint@9.12.0)
       '@eslint/eslintrc': 2.1.4
       ci-info: 4.2.0
       clean-regexp: 1.0.0
@@ -10510,7 +10510,7 @@ snapshots:
 
   eslint@9.12.0:
     dependencies:
-      '@eslint-community/eslint-utils': 4.5.0(eslint@9.12.0)
+      '@eslint-community/eslint-utils': 4.5.1(eslint@9.12.0)
       '@eslint-community/regexpp': 4.12.1
       '@eslint/config-array': 0.18.0
       '@eslint/core': 0.6.0
@@ -14577,7 +14577,7 @@ snapshots:
 
   undici-types@6.20.0: {}
 
-  undici@6.21.1: {}
+  undici@6.21.2: {}
 
   unified-engine@11.2.2:
     dependencies:
