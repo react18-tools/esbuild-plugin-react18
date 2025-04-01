@@ -17,12 +17,12 @@
     "plop": "^4.0.1",
     "prettier": "^3.5.3",
     "turbo": "^2.4.4",
-    "typedoc": "^0.27.9",
+    "typedoc": "^0.28.1",
     "typedoc-plugin-extras": "^4.0.0",
     "typedoc-plugin-inline-sources": "^1.2.1",
     "typedoc-plugin-mdn-links": "^5.0.1",
-    "typedoc-plugin-missing-exports": "^3.1.0",
-    "typedoc-plugin-rename-defaults": "^0.7.2",
+    "typedoc-plugin-missing-exports": "^4.0.0",
+    "typedoc-plugin-rename-defaults": "^0.7.3",
     "typedoc-plugin-zod": "^1.4.0"
   },
   "packageManager": "pnpm@9.15.0",
@@ -30,7 +30,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@types/node": "^22.13.10"
+    "@types/node": "^22.13.16"
   },
   "name": "esbuild-plugin-react18"
 }
