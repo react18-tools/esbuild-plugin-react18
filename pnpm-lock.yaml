@@ -244,8 +244,8 @@ importers:
         specifier: ^2.5.0
         version: 2.5.0(eslint@9.12.0)(turbo@2.5.0)
       eslint-plugin-mdx:
-        specifier: ^3.3.2
-        version: 3.3.2(eslint@9.12.0)
+        specifier: ^3.4.0
+        version: 3.4.0(eslint@9.12.0)
       eslint-plugin-only-warn:
         specifier: ^1.1.0
         version: 1.1.0
@@ -2697,8 +2697,8 @@ packages:
     resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==}
     engines: {node: '>=16'}
 
-  caniuse-lite@1.0.30001711:
-    resolution: {integrity: sha512-OpFA8GsKtoV3lCcsI3U5XBAV+oVrMu96OS8XafKqnhOaEAW2mveD1Mx81Sx/02chERwhDakuXs28zbyEc4QMKg==}
+  caniuse-lite@1.0.30001712:
+    resolution: {integrity: sha512-MBqPpGYYdQ7/hfKiet9SCI+nmN5/hp4ZzveOJubl5DTAMa5oggjAuoi0Z4onBpKPFI2ePGnQuQIzF3VxDjDJig==}
 
   capital-case@1.0.4:
     resolution: {integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==}
@@ -3309,8 +3309,8 @@ packages:
       eslint-plugin-import-x:
         optional: true
 
-  eslint-mdx@3.3.2:
-    resolution: {integrity: sha512-GFeLoM2S5Jx0iTXYvsp/do/UNTzV+vRNfNxRglelXb9ZNSfUFGHsq60ZcHyUvpxy2crPebCX4gzT/FRu/LJRbA==}
+  eslint-mdx@3.4.0:
+    resolution: {integrity: sha512-sNffDEvt3fAEkrCntX0Kk/IWhHkfp0fhQ7/n30gQuIRm/FeUjLMkKkgAwlOFqxIMD4XJ03Iidmkf18EC8zTyYw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       eslint: '>=8.0.0'
@@ -3375,8 +3375,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-mdx@3.3.2:
-    resolution: {integrity: sha512-zBvxCiKzahbTRvWPONDZups1As5clGjv1OLOLnX/p+OwdrZdcwJ3tiBihu6xeZuem9u6iwMkr9kHVurcuzbTCg==}
+  eslint-plugin-mdx@3.4.0:
+    resolution: {integrity: sha512-f/ot8rSp/telkW1joqe0y9XQigTrE99sQHqyqLYYVgGLtQvl54suDidepbiGsDF7Z5V9uyQPWpmY0Qu/ZMRzmg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       eslint: '>=8.0.0'
@@ -9567,7 +9567,7 @@ snapshots:
   autoprefixer@10.4.21(postcss@8.5.3):
     dependencies:
       browserslist: 4.24.4
-      caniuse-lite: 1.0.30001711
+      caniuse-lite: 1.0.30001712
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.1.1
@@ -9695,7 +9695,7 @@ snapshots:
 
   browserslist@4.24.4:
     dependencies:
-      caniuse-lite: 1.0.30001711
+      caniuse-lite: 1.0.30001712
       electron-to-chromium: 1.5.132
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.4)
@@ -9775,7 +9775,7 @@ snapshots:
 
   camelcase@8.0.0: {}
 
-  caniuse-lite@1.0.30001711: {}
+  caniuse-lite@1.0.30001712: {}
 
   capital-case@1.0.4:
     dependencies:
@@ -10471,7 +10471,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-mdx@3.3.2(eslint@9.12.0):
+  eslint-mdx@3.4.0(eslint@9.12.0):
     dependencies:
       acorn: 8.14.1
       acorn-jsx: 5.3.2(acorn@8.14.1)
@@ -10568,11 +10568,13 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-mdx@3.3.2(eslint@9.12.0):
+  eslint-plugin-mdx@3.4.0(eslint@9.12.0):
     dependencies:
       eslint: 9.12.0
-      eslint-mdx: 3.3.2(eslint@9.12.0)
+      eslint-mdx: 3.4.0(eslint@9.12.0)
       mdast-util-from-markdown: 2.0.2
+      mdast-util-mdx: 3.0.0
+      micromark-extension-mdxjs: 3.0.0
       remark-mdx: 3.1.0
       remark-parse: 11.0.0
       remark-stringify: 11.0.0
@@ -13044,7 +13046,7 @@ snapshots:
       '@swc/counter': 0.1.3
       '@swc/helpers': 0.5.15
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001711
+      caniuse-lite: 1.0.30001712
       postcss: 8.4.31
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
