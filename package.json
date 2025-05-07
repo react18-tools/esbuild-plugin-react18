@@ -30,7 +30,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@types/node": "^22.15.14"
+    "@types/node": "^22.15.15"
   },
   "name": "esbuild-plugin-react18"
 }
