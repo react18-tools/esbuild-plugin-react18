@@ -15,17 +15,17 @@
     "@repo/logger": "workspace:*",
     "@repo/shared": "workspace:*",
     "esbuild-plugin-react18": "workspace:*",
-    "next": "^15.3.2",
+    "next": "^15.3.3",
     "nextjs-themes": "^4.0.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react18-loaders": "^1.1.4"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^15.3.2",
+    "@next/eslint-plugin-next": "^15.3.3",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "^22.15.24",
+    "@types/node": "^22.15.26",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "typescript": "^5.8.3"
