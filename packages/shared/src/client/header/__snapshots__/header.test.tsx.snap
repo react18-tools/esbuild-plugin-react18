@@ -3,18 +3,18 @@
 exports[`header > snapshot 1`] = `
 <div>
   <header
-    class="_header_66b73e"
+    class="_header_9a423b"
   >
     <div>
       <button
-        class="_drawerBtn_457bb3 mb "
+        class="_drawerBtn_902ff5 mb "
       >
         <div />
         <div />
         <div />
       </button>
       <a
-        class="_logo_f9173e"
+        class="_logo_16bfc4"
         href="/"
         rel="noopener noreferrer"
         target="_blank"
@@ -27,7 +27,7 @@ exports[`header > snapshot 1`] = `
         class=""
       >
         <a
-          class="_author_66b73e"
+          class="_author_9a423b"
           href="https://mayank-chaudhari.vercel.app/"
           rel="noopener noreferrer"
           target="_blank"
@@ -35,7 +35,7 @@ exports[`header > snapshot 1`] = `
           By Mayank Chaudhari
         </a>
         <button
-          class="_themeswitch_66b73e"
+          class="_themeswitch_9a423b"
         >
           <button
             class="nth-s nth-system "
