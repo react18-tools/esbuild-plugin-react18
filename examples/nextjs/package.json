@@ -14,14 +14,14 @@
   "dependencies": {
     "@repo/shared": "workspace:*",
     "esbuild-plugin-react18": "workspace:*",
-    "next": "^15.4.7",
+    "next": "^15.5.0",
     "nextjs-themes": "^4.0.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react18-loaders": "^1.1.7"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^15.4.7",
+    "@next/eslint-plugin-next": "^15.5.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^24.3.0",
