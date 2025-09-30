@@ -189,8 +189,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       eslint-plugin-storybook:
-        specifier: ^9.1.8
-        version: 9.1.8(eslint@9.12.0)(storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.9.2)
+        specifier: ^9.1.9
+        version: 9.1.9(eslint@9.12.0)(storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.9.2)
 
   packages/config-typescript: {}
 
@@ -1409,8 +1409,8 @@ packages:
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
     engines: {node: '>=18'}
 
-  '@testing-library/jest-dom@6.8.0':
-    resolution: {integrity: sha512-WgXcWzVM6idy5JaftTVC8Vs83NKRmGJz4Hqs4oyOuO2J4r/y79vvKZsb+CaGyCSEbUPI6OsewfPd0G1A0/TUZQ==}
+  '@testing-library/jest-dom@6.9.0':
+    resolution: {integrity: sha512-QHdxYMJ0YPGKYofMc6zYvo7LOViVhdc6nPg/OtM2cf9MQrwEcTxFCs7d/GJ5eSyPkHzOiBkc/KfLdFJBHzldtQ==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
 
   '@testing-library/react@16.3.0':
@@ -2678,12 +2678,12 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-storybook@9.1.8:
-    resolution: {integrity: sha512-mEn5EVc7DAEvuwKMqUrIYUFZQJiQD3i5egLi1UJERQm91mDOMr5RdC4hjUF3tNE+WxQYD7QzH2j1qf36ML7V3g==}
+  eslint-plugin-storybook@9.1.9:
+    resolution: {integrity: sha512-2ZxaIR3ZfsBP4vqrC6fsCKM8pCbgTLRcBUm69g1yiJBKAbIHU8nQSsD6gpEPO3YFdRayGqzxnvwwWcXwtm5f5Q==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       eslint: '>=8'
-      storybook: ^9.1.8
+      storybook: ^9.1.9
 
   eslint-plugin-testing-library@6.5.0:
     resolution: {integrity: sha512-Ls5TUfLm5/snocMAOlofSOJxNN0aKqwTlco7CrNtMjkTdQlkpSMaeTCDHCuXfzrI97xcx2rSCNeKeJjtpkNC1w==}
@@ -6724,7 +6724,7 @@ snapshots:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
-  '@testing-library/jest-dom@6.8.0':
+  '@testing-library/jest-dom@6.9.0':
     dependencies:
       '@adobe/css-tools': 4.4.4
       aria-query: 5.3.2
@@ -8224,7 +8224,7 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-storybook@9.1.8(eslint@9.12.0)(storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.9.2):
+  eslint-plugin-storybook@9.1.9(eslint@9.12.0)(storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.9.2):
     dependencies:
       '@typescript-eslint/utils': 8.45.0(eslint@9.12.0)(typescript@5.9.2)
       eslint: 9.12.0
@@ -10869,7 +10869,7 @@ snapshots:
   storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2):
     dependencies:
       '@storybook/global': 5.0.0
-      '@testing-library/jest-dom': 6.8.0
+      '@testing-library/jest-dom': 6.9.0
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
       '@vitest/expect': 3.0.9
       '@vitest/spy': 3.0.9
