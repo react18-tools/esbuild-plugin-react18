@@ -14,19 +14,19 @@
   "dependencies": {
     "@repo/shared": "workspace:*",
     "esbuild-plugin-react18": "workspace:*",
-    "next": "^15.5.4",
+    "next": "^15.5.5",
     "nextjs-themes": "^4.0.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react18-loaders": "^1.1.11"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^15.5.4",
+    "@next/eslint-plugin-next": "^15.5.5",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^24.7.2",
     "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.1",
+    "@types/react-dom": "^19.2.2",
     "typescript": "^5.9.3"
   }
 }
