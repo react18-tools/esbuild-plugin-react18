@@ -8,6 +8,6 @@
     "eslint-config-turbo": "^2.5.8",
     "eslint-plugin-mdx": "^3.6.2",
     "eslint-plugin-only-warn": "^1.1.0",
-    "eslint-plugin-storybook": "^10.0.1"
+    "eslint-plugin-storybook": "^10.0.2"
   }
 }
