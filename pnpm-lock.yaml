@@ -189,8 +189,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       eslint-plugin-storybook:
-        specifier: ^10.0.4
-        version: 10.0.4(eslint@9.12.0)(storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.9.3)
+        specifier: ^10.0.5
+        version: 10.0.5(eslint@9.12.0)(storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.9.3)
 
   packages/config-typescript: {}
 
@@ -274,8 +274,8 @@ importers:
 
 packages:
 
-  '@acemir/cssom@0.9.19':
-    resolution: {integrity: sha512-Pp2gAQXPZ2o7lt4j0IMwNRXqQ3pagxtDj5wctL5U2Lz4oV0ocDNlkgx4DpxfyKav4S/bePuI+SMqcBSUHLy9kg==}
+  '@acemir/cssom@0.9.20':
+    resolution: {integrity: sha512-YUSA5jW8qn/c6nZUlFsn2Nt5qFFRBcGTgL9CzbiZbJCtEFY0Nv/ycO3BHT9tLjus9++zOYWe5mLCRIesuay25g==}
 
   '@adobe/css-tools@4.4.4':
     resolution: {integrity: sha512-Elp+iwUx5rN5+Y8xLt5/GRoG20WGoDCQ/1Fb+1LiGtvwbDavuSk0jhD/eZdckHAuzcDzccnkv+rEjyWfRx18gg==}
@@ -2745,11 +2745,11 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-storybook@10.0.4:
-    resolution: {integrity: sha512-etAC9C/x6SQZksQQkCZpSms7O9CLTzwPtion2e8hQSnzT3BIyhSP4JHGJyNwEQ2Mt71XROWuOwqnH776cZiXqw==}
+  eslint-plugin-storybook@10.0.5:
+    resolution: {integrity: sha512-XjQH47eX4nFvYBtaClrjmY+f7/beWYsW3TSXLTztlIhVNk8AH14ePmXB2xCUbFXVEZaD6L+BjZtFV5rN/b+nyA==}
     peerDependencies:
       eslint: '>=8'
-      storybook: ^10.0.4
+      storybook: ^10.0.5
 
   eslint-plugin-testing-library@6.5.0:
     resolution: {integrity: sha512-Ls5TUfLm5/snocMAOlofSOJxNN0aKqwTlco7CrNtMjkTdQlkpSMaeTCDHCuXfzrI97xcx2rSCNeKeJjtpkNC1w==}
@@ -5561,7 +5561,7 @@ packages:
 
 snapshots:
 
-  '@acemir/cssom@0.9.19': {}
+  '@acemir/cssom@0.9.20': {}
 
   '@adobe/css-tools@4.4.4': {}
 
@@ -8344,7 +8344,7 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-storybook@10.0.4(eslint@9.12.0)(storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.9.3):
+  eslint-plugin-storybook@10.0.5(eslint@9.12.0)(storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.9.3):
     dependencies:
       '@typescript-eslint/utils': 8.46.3(eslint@9.12.0)(typescript@5.9.3)
       eslint: 9.12.0
@@ -9545,7 +9545,7 @@ snapshots:
 
   jsdom@27.1.0:
     dependencies:
-      '@acemir/cssom': 0.9.19
+      '@acemir/cssom': 0.9.20
       '@asamuzakjp/dom-selector': 6.7.4
       cssstyle: 5.3.2
       data-urls: 6.0.0
