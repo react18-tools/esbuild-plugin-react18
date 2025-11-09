@@ -18,7 +18,7 @@
     "nextjs-themes": "^4.0.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react18-loaders": "^1.1.11"
+    "react18-loaders": "^1.1.12"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^16.0.1",
