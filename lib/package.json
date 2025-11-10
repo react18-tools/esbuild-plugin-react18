@@ -28,7 +28,7 @@
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^24.10.0",
     "@vitest/coverage-v8": "^4.0.8",
-    "esbuild": "^0.26.0",
+    "esbuild": "^0.27.0",
     "esbuild-plugin-react18-css": "^0.0.4",
     "tiny-glob": "^0.2.9",
     "tsup": "^8.5.0",
