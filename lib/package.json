@@ -27,14 +27,14 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^24.10.1",
-    "@vitest/coverage-v8": "^4.0.10",
+    "@vitest/coverage-v8": "^4.0.12",
     "esbuild": "^0.27.0",
     "esbuild-plugin-react18-css": "^0.0.4",
     "tiny-glob": "^0.2.9",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^4.0.10"
+    "vitest": "^4.0.12"
   },
   "funding": [
     {
