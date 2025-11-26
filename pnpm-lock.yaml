@@ -189,8 +189,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       eslint-plugin-storybook:
-        specifier: ^10.0.8
-        version: 10.0.8(eslint@9.12.0)(storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.9.3)
+        specifier: ^10.1.0
+        version: 10.1.0(eslint@9.12.0)(storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.9.3)
 
   packages/config-typescript: {}
 
@@ -564,8 +564,8 @@ packages:
     peerDependencies:
       '@csstools/css-tokenizer': ^3.0.4
 
-  '@csstools/css-syntax-patches-for-csstree@1.0.17':
-    resolution: {integrity: sha512-LCC++2h8pLUSPY+EsZmrrJ1EOUu+5iClpEiDhhdw3zRJpPbABML/N5lmRuBHjxtKm9VnRcsUzioyD0sekFMF0A==}
+  '@csstools/css-syntax-patches-for-csstree@1.0.19':
+    resolution: {integrity: sha512-QW5/SM2ARltEhoKcmRI1LoLf3/C7dHGswwCnfLcoMgqurBT4f8GvwXMgAbK/FwcxthmJRK5MGTtddj0yQn0J9g==}
     engines: {node: '>=18'}
 
   '@csstools/css-tokenizer@3.0.4':
@@ -2917,11 +2917,11 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-storybook@10.0.8:
-    resolution: {integrity: sha512-ZKEMFhF/z/HRVvIgnEIYG2uAqmuLbkebUdHH3DpGHE64GPgk+KozcpqnD6zNk5vJ407bFmcWsGinBc2zi74f0g==}
+  eslint-plugin-storybook@10.1.0:
+    resolution: {integrity: sha512-5s/Hi9bKl6xSChPOlHwLrQDW+Nj6OXnl9nnQmbKtEQoCdEuSDbAEDc8zZ9NLAyD2rljE2N6Jhe9iP9+2lm43tQ==}
     peerDependencies:
       eslint: '>=8'
-      storybook: ^10.0.8
+      storybook: ^10.1.0
 
   eslint-plugin-testing-library@6.5.0:
     resolution: {integrity: sha512-Ls5TUfLm5/snocMAOlofSOJxNN0aKqwTlco7CrNtMjkTdQlkpSMaeTCDHCuXfzrI97xcx2rSCNeKeJjtpkNC1w==}
@@ -6141,7 +6141,7 @@ snapshots:
     dependencies:
       '@csstools/css-tokenizer': 3.0.4
 
-  '@csstools/css-syntax-patches-for-csstree@1.0.17': {}
+  '@csstools/css-syntax-patches-for-csstree@1.0.19': {}
 
   '@csstools/css-tokenizer@3.0.4': {}
 
@@ -8097,7 +8097,7 @@ snapshots:
   cssstyle@5.3.3:
     dependencies:
       '@asamuzakjp/css-color': 4.1.0
-      '@csstools/css-syntax-patches-for-csstree': 1.0.17
+      '@csstools/css-syntax-patches-for-csstree': 1.0.19
       css-tree: 3.1.0
 
   csstype@3.2.3: {}
@@ -8620,7 +8620,7 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-storybook@10.0.8(eslint@9.12.0)(storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.9.3):
+  eslint-plugin-storybook@10.1.0(eslint@9.12.0)(storybook@9.0.0(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.9.3):
     dependencies:
       '@typescript-eslint/utils': 8.48.0(eslint@9.12.0)(typescript@5.9.3)
       eslint: 9.12.0
