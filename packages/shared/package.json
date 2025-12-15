@@ -33,7 +33,7 @@
     "react-dom": "^19.2.3",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
-    "vite-tsconfig-paths": "^5.1.4",
+    "vite-tsconfig-paths": "^6.0.0",
     "vitest": "^4.0.15"
   },
   "peerDependencies": {
