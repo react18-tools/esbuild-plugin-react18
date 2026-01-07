@@ -2307,8 +2307,8 @@ packages:
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  baseline-browser-mapping@2.9.11:
-    resolution: {integrity: sha512-Sg0xJUNDU1sJNGdfGWhVHX0kkZ+HWcvmVymJbj6NSgZZmW/8S9Y2HQ5euytnIgakgxN6papOAWiwDo1ctFDcoQ==}
+  baseline-browser-mapping@2.9.12:
+    resolution: {integrity: sha512-Mij6Lij93pTAIsSYy5cyBQ975Qh9uLEc5rwGTpomiZeXZL9yIS6uORJakb3ScHgfs0serMMfIbXzokPMuEiRyw==}
     hasBin: true
 
   better-opn@3.0.2:
@@ -7889,7 +7889,7 @@ snapshots:
 
   base64-js@1.5.1: {}
 
-  baseline-browser-mapping@2.9.11: {}
+  baseline-browser-mapping@2.9.12: {}
 
   better-opn@3.0.2:
     dependencies:
@@ -7924,7 +7924,7 @@ snapshots:
 
   browserslist@4.28.1:
     dependencies:
-      baseline-browser-mapping: 2.9.11
+      baseline-browser-mapping: 2.9.12
       caniuse-lite: 1.0.30001762
       electron-to-chromium: 1.5.267
       node-releases: 2.0.27
@@ -10416,7 +10416,7 @@ snapshots:
     dependencies:
       '@next/env': 16.1.1
       '@swc/helpers': 0.5.15
-      baseline-browser-mapping: 2.9.11
+      baseline-browser-mapping: 2.9.12
       caniuse-lite: 1.0.30001762
       postcss: 8.4.31
       react: 19.2.3
