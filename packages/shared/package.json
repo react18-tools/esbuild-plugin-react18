@@ -28,7 +28,7 @@
     "@vitest/coverage-v8": "^4.0.18",
     "esbuild-plugin-react18": "workspace:*",
     "esbuild-plugin-react18-css": "^0.0.4",
-    "jsdom": "^27.4.0",
+    "jsdom": "^28.0.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "tsup": "^8.5.1",
