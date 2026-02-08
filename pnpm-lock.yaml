@@ -3623,8 +3623,8 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  isexe@3.1.3:
-    resolution: {integrity: sha512-+DAwQUtT9h86RsYHuBuSf583mEx34Z8ZTf8BXVrDDvHkUN/0e9c+UX3SHUUxSsZ3ZDfKY6sK7VdCJ96269O5+A==}
+  isexe@3.1.4:
+    resolution: {integrity: sha512-jCErc4h4RnTPjFq53G4whhjAMbUAqinGrCrTT4dmMNyi4zTthK+wphqbRLJtL4BN/Mq7Zzltr0m/b1X0m7PGFQ==}
     engines: {node: '>=20'}
 
   isobject@3.0.1:
@@ -9404,7 +9404,7 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  isexe@3.1.3: {}
+  isexe@3.1.4: {}
 
   isobject@3.0.1: {}
 
@@ -12053,7 +12053,7 @@ snapshots:
 
   which@4.0.0:
     dependencies:
-      isexe: 3.1.3
+      isexe: 3.1.4
 
   why-is-node-running@2.3.0:
     dependencies:
