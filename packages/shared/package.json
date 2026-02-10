@@ -24,7 +24,7 @@
     "@types/node": "^25.2.2",
     "@types/react": "^19.2.13",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.3",
+    "@vitejs/plugin-react": "^5.1.4",
     "@vitest/coverage-v8": "^4.0.18",
     "esbuild-plugin-react18": "workspace:*",
     "esbuild-plugin-react18-css": "^0.0.4",
