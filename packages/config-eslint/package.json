@@ -7,7 +7,7 @@
     "@vercel/style-guide": "^6.0.0",
     "eslint-config-turbo": "^2.8.12",
     "eslint-plugin-mdx": "^3.7.0",
-    "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-only-warn": "^1.2.1",
     "eslint-plugin-storybook": "^10.2.13"
   }
 }
