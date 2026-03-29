@@ -15,3 +15,6 @@ coverage
 
 # temporary files
 tsup.config.bundled*
+
+# Promptshield
+.promptshield
